@@ -22,10 +22,10 @@
     </head>
     <body>
         <div class="header">
-            <div class="header-content pull-left">sss</div>
-            <div class="header-content pull-left">Хедер</div>
+            <div class="header-content pull-left">Logo</div>
+            <div class="header-content pull-left">Links on pages</div>
             <div class="header-content pull-right">
-                <div class="pull-left"><i class="fa fa-user"></i>Username</div>
+                <div class="pull-left"><i class="fa fa-user" id="username"></i>Username</div>
                 <div class=""><i class="fa fa-cog" title="Настройки"></i></div>
             </div>
             <div class="clearfix"></div>
