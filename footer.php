@@ -10,6 +10,7 @@
         <link href="css/bootstrap.css" rel="stylesheet">
         <!-- Fonts -->
         <link href='http://fonts.googleapis.com/css?family=Courgette' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="css/font-awesome.css">
         <!-- Js -->
         <script src="js/jquery-2.1.3.min.js" type="text/javascript"></script>
         <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -21,7 +22,13 @@
     </head>
     <body>
         <div class="header">
-            <div class="header-content">Хедер</div>
+            <div class="header-content pull-left">sss</div>
+            <div class="header-content pull-left">Хедер</div>
+            <div class="header-content pull-right">
+                <div class="pull-left"><i class="fa fa-user"></i>Username</div>
+                <div class=""><i class="fa fa-cog" title="Настройки"></i></div>
+            </div>
+            <div class="clearfix"></div>
         </div>
         <div class="container">
             
