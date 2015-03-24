@@ -1,0 +1,50 @@
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+    font-family: 'Courgette', cursive !important;
+    margin-bottom: 75px !important;
+}
+.header {
+    top: 0;
+    width: 100%;
+    padding: 15px 0;
+    border-bottom: 1px #b4b8be solid;
+    background-color: #fff;
+    margin-bottom: 25px;
+    background-color: #eee
+}
+
+.header .header-content{
+    max-width: 680px;
+    margin: auto;
+}
+
+
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 15px 0;
+    border-top: 1px #b4b8be solid;
+    background-color: #eee
+}
+
+.footer .footer-text {
+    width: auto;
+    max-width: 680px;
+    margin: auto;
+}
+
+.footer .footer-text ul {
+    padding: 0;
+    text-align: center;
+    margin-bottom: 0px;
+}
+
+.footer .footer-text .footer-links li {
+    display: inline;
+    padding: 0 2px;
+}

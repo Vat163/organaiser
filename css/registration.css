@@ -1,0 +1,61 @@
+body {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    background-color: #eee !important;
+    font-family: 'Courgette', cursive !important;
+}
+
+.container .row {
+    background: #FFF;
+    border: 1px #b4b8be solid;
+    border-radius: 5px;
+    padding: 5px 0 15px 0;
+    text-align: center;
+}
+
+.container .row .title {
+    font-size: 26px;
+    font-weight: 700;
+    color: #277EC4;
+    padding: 10px 0;
+    width: 97%;
+    margin: auto;
+    margin-bottom: 20px;
+    border-bottom: 1px #eaebeb solid;
+}
+
+.container .row .block {
+    display: table;
+    margin: auto;
+    padding: 0px 10px 5px 10px;
+}
+
+.container .row .block .data {
+    width: 220px;
+}
+
+.container .row .block .data .data-inputs {
+    width: 200px;
+    border-radius: 10px;
+    border: 1px #b4b8be solid;
+    outline: none;
+    padding: 4px 7px;
+}
+
+.container .row .endline {
+    border-bottom: 1px #eaebeb solid;
+    width: 97%;
+    margin-bottom: 20px;
+}
+
+.container .row .block .btns-add_del {
+    padding-right: 20px;
+}
+
+.container .row .block .btns-add_del .btns-add_del_width {
+    width: 170px;
+}
+
+.container .row #padding{
+    padding-bottom: 20px;
+}
