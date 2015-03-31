@@ -6,6 +6,7 @@ body {
     font-family: 'Courgette', cursive !important;
     margin-bottom: 75px !important;
 }
+/*    Header   */
 .header {
     top: 0;
     width: 100%;
@@ -23,10 +24,79 @@ body {
 }
 
 .header .header-content #username{
-    padding-right: 10px;
+    padding-right: 20px;
 }
 
+.header .header-content #username > i{
+    padding-right: 5px;
+}
 
+.header .header-content .decor_none {
+    text-decoration: none;
+}
+
+div#loginModal > button.close {
+    padding: 15px;
+}
+
+.header .header-content #loginModal .form-signin {
+    max-width: 330px;
+    padding: 30px 15px 0 15px;
+    margin: 0 auto;
+}
+
+.header .header-content #loginModal .form-signin .form-signin-heading,
+.form-signin .checkbox {
+    margin-bottom: 10px;
+}
+
+.header .header-content #loginModal .form-signin .checkbox {
+    font-weight: normal;
+}
+
+.header .header-content #loginModal .form-signin .form-control {
+    position: relative;
+    height: auto;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.header .header-content #loginModal .form-signin .form-control:focus {
+    z-index: 2;
+}
+
+.header .header-content #loginModal .form-signin input[type="email"] {
+    margin-bottom: -1px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.header .header-content #loginModal .form-signin input[type="password"] {
+    margin-bottom: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.header .header-content #loginModal .registration{
+    margin: auto;
+    max-width: 330px;
+    width: 300px;
+    text-align: left;
+}
+
+.header .header-content #loginModal .registration > a{
+    color: #333333;
+    
+}
+
+/* ---------------------------------------- */
+
+
+
+/*    Footer    */
 .footer {
     position: absolute;
     bottom: 0;
@@ -52,3 +122,4 @@ body {
     display: inline;
     padding: 0 2px;
 }
+/* ----------------------------------------- */

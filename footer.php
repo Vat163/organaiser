@@ -8,11 +8,14 @@
         <link rel="stylesheet" href="css/style.css">
         <!-- Bootstrap -->
         <link href="css/bootstrap.css" rel="stylesheet">
+        <link rel="stylesheet" href="css/bootstrap-theme.css">
         <!-- Fonts -->
         <link href='http://fonts.googleapis.com/css?family=Courgette' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="css/font-awesome.css">
         <!-- Js -->
         <script src="js/jquery-2.1.3.min.js" type="text/javascript"></script>
+        <script src="js/bootstrap.js" type="text/javascript"></script>
+        
         <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         <!--[if lt IE 9]>
@@ -22,25 +25,62 @@
     </head>
     <body>
         <div class="header">
+            <div class="container">
             <div class="header-content pull-left">Logo</div>
             <div class="header-content pull-left">Links on pages</div>
             <div class="header-content pull-right">
-                <div class="pull-left"><i class="fa fa-user" id="username"></i>Username</div>
-                <div class=""><i class="fa fa-cog" title="Настройки"></i></div>
-            </div>
-            <div class="clearfix"></div>
-        </div>
-        <div class="container">
-            
-        </div>
-            <div class="footer">
-                <div class="footer-text">
-                    <ul class="footer-links">
-                        <li><a href="#">О проекте</a></li>
-                        <li>·</li>
-                        <li><a href="#">Контакты</a></li>
-                    </ul>
+                <div class="hide">
+                    <div class="pull-right dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <span class="fa fa-cog" title="Настройки"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Настройки</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">Выход</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="pull-right" id="username">
+                        <i class="fa fa-user"></i>
+                        <a href="#">Username</a>
+                    </div>
+                </div>
+                
+                <div class="pull-right">
+                    <a href="registration.php" class="decor_none btn-sm btn-primary">Регистрация</a>
+                    <a href="#loginModal" data-toggle="modal" class="decor_none btn-sm btn-success">Вход</a>
+                    <div class="modal" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">X</button>
+                        <form metod="POST" id="enter" class="form-signin">
+                            <h2 class="form-signin-heading">Войдите</h2>
+                            <label for="inputEmail" class="sr-only">Email адрес</label>
+                            <input type="email" id="inputEmail" class="form-control" placeholder="Email адрес" required="" autofocus="">
+                            <label for="inputPassword" class="sr-only">Password</label>
+                            <input type="password" id="inputPassword" class="form-control" placeholder="Пароль" required="">
+                            <div class="checkbox">
+                                <label><input type="checkbox" value="remember-me"> Запомнить меня</label>
+                            </div>
+                            <button class="btn btn-lg btn-primary btn-block" type="submit">Войти</button>
+                        </form>
+                        <div class="registration"><a href="registration.php">Ещё не зарегистрированы?</a></div>
+                    </div>
                 </div>
             </div>
+            <div class="clearfix"></div>
+            </div>
+        </div>
+        <div class="container">
+                        
+        </div>
+        <div class="footer">
+            <div class="footer-text">
+                <ul class="footer-links">
+                    <li><a href="#">О проекте</a></li>
+                    <li>·</li>
+                    <li><a href="#">Контакты</a></li>
+                </ul>
+            </div>
+        </div>
     </body>
 </html>
