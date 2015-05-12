@@ -12,7 +12,7 @@
         <link href='http://fonts.googleapis.com/css?family=Courgette' rel='stylesheet' type='text/css'>
         <!-- Js -->
         <script src="js/jquery-2.1.3.min.js" type="text/javascript"></script>
-        <script src="js/registration.js" type="text/javascript"></script>
+        <script src="js/script.js" type="text/javascript"></script>
         <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         <!--[if lt IE 9]>
@@ -50,15 +50,15 @@
                 <div class="block">
                 
                     <div class="pull-left data">
-                        <label for="email">Email<input name="email" class="data-inputs" id="email" type="text" maxlength="255"></label>
+                        <label for="email">Email<input name="email" class="data-inputs" id="email" type="text" maxlength="25"></label>
                     </div>
                    
                     <div class="pull-left data">
-                        <label for="login">Логин<input name="name" class="data-inputs" id="login" type="text" maxlength="255"></label>
+                        <label for="login">Логин<input name="name" class="data-inputs" id="login" type="text" maxlength="25"></label>
                     </div>
 
                     <div class="pull-left data">
-                        <label for="password">Пароль<input name="post" class="data-inputs" id="password" type="password" maxlength="12"></label>
+                        <label for="password">Пароль<input name="post" class="data-inputs" id="password" class="password" type="password" maxlength="12"></label>
                     </div>
                        
                 </div>
@@ -74,7 +74,7 @@
                         <input id="add_worker" class="btn btn-primary btns-add_del_width" name="add" type="button" value="Добавить работника">
                     </div>
                     
-                    <input class="btn btn-success" name="done" type="button" value="Готово">
+                    <input class="btn btn-success" name="done" id="done" type="submit" value="Готово">
                     
                 </div>
                 <div id="new_worker"></div>

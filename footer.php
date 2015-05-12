@@ -1,3 +1,9 @@
+<?php
+    if (!empty($_POST['submited'])) {
+        $date = $_POST['datetime'];
+        echo('date');
+    }
+?>
 <!DOCTYPE HTML>
 <html>
     <head>
@@ -15,6 +21,7 @@
         <!-- Js -->
         <script src="js/jquery-2.1.3.min.js" type="text/javascript"></script>
         <script src="js/bootstrap.js" type="text/javascript"></script>
+        <script src="js/script.js" type="text/javascript"></script>
         
         <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -52,7 +59,7 @@
                     <a href="#loginModal" data-toggle="modal" class="decor_none btn-sm btn-success">Вход</a>
                     <div class="modal" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">X</button>
-                        <form metod="POST" id="enter" class="form-signin">
+                        <form action="footer.php" metod="POST" id="enter" class="form-signin">
                             <h2 class="form-signin-heading">Войдите</h2>
                             <label for="inputEmail" class="sr-only">Email адрес</label>
                             <input type="email" id="inputEmail" class="form-control" placeholder="Email адрес" required="" autofocus="">
@@ -71,7 +78,14 @@
             </div>
         </div>
         <div class="container">
-                        
+
+        <form action="footer.php" metod="POST">
+            <input type="date" id="inputEmail" class="form-control">
+            <input type="time" id="inputEmail" class="form-control">
+            <input type="datetime-local" id="inputEmail" class="form-control" name="datetime">
+            <input type="submit" class="btn" name="submited">
+        </form>
+        
         </div>
         <div class="footer">
             <div class="footer-text">
