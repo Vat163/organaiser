@@ -118,4 +118,19 @@ class Records extends CActiveRecord
 	{
 		return parent::model($className);
 	}
+    
+    protected function beforeSave()
+    {
+        if(parent::beforeSave())
+        {
+            if($this->isNewRecord)
+            {
+                $this->user_id=Yii::app()->user->id;
+                return true;
+            }
+        }
+        else
+            return false;
+    }
+    
 }
