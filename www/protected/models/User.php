@@ -10,13 +10,14 @@
  * @property string $email
  * @property string $first_name
  * @property string $last_name
- * @property string $organisation
+ * @property integer $organisation_id
  * @property string $profile
  * @property integer $admin
  *
  * The followings are the available model relations:
  * @property Chat[] $chats
  * @property Records[] $records
+ * @property Organisation[] $organisation
  */
 class User extends CActiveRecord
 {
@@ -38,14 +39,14 @@ class User extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('username, password, email, first_name, last_name, organisation, profile, admin', 'required'),
-			array('admin', 'numerical', 'integerOnly'=>true),
+			array('username, password, email, first_name, last_name, profile', 'required'),
+			array('admin, organisation_id, id', 'numerical', 'integerOnly'=>true),
             array('admin', 'in', 'range'=>array(0,1)),
 			array('username, email, first_name, last_name', 'length', 'max'=>128),
 			array('password', 'length', 'max'=>64),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, username, password, email, first_name, last_name, organisation, profile, admin', 'safe', 'on'=>'search'),
+			array('username, email, first_name, last_name, profile, admin', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -59,6 +60,7 @@ class User extends CActiveRecord
 		return array(
 			'chats' => array(self::HAS_MANY, 'Chat', 'user_id'),
 			'records' => array(self::HAS_MANY, 'Records', 'user_id'),
+            'organisation' => array(self::BELONGS_TO, 'Organisation', 'organisation_id'),
 		);
 	}
 
@@ -74,7 +76,7 @@ class User extends CActiveRecord
 			'email' => 'Email',
 			'first_name' => 'First Name',
 			'last_name' => 'Last Name',
-			'organisation' => 'Organisation',
+			'organisation_id' => 'Organisation',
 			'profile' => 'Profile',
 			'admin' => 'Admin',
 		);
@@ -104,7 +106,7 @@ class User extends CActiveRecord
 		$criteria->compare('email',$this->email,true);
 		$criteria->compare('first_name',$this->first_name,true);
 		$criteria->compare('last_name',$this->last_name,true);
-		$criteria->compare('organisation',$this->organisation,true);
+		$criteria->compare('organisation_id',$this->organisation_id);
 		$criteria->compare('profile',$this->profile,true);
 		$criteria->compare('admin',$this->admin);
 
