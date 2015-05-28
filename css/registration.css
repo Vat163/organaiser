@@ -48,6 +48,13 @@ body {
     margin-bottom: 20px;
 }
 
+.container .row .block > select{
+    border-radius: 10px;
+    padding-left: 20px;
+    outline: none;
+    margin-left: 10px;
+}
+
 .container .row .block .btns-add_del {
     padding-right: 20px;
 }

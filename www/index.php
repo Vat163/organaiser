@@ -1,7 +1,7 @@
 <?php
 
 // change the following paths if necessary
-$yii='E:\XAMPP\htdocs\organaiser\framework\yii\framework\yii.php';
+$yii='E:\XAMPP\htdocs\organiser\framework\yii\framework\yii.php';
 $config=dirname(__FILE__).'/protected/config/main.php';
 
 // remove the following lines when in production mode

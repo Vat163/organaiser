@@ -3,7 +3,7 @@
 
 //$this->pageTitle=Yii::app()->name;
 ?>
-    <img src="images/logo_1024.jpg" alt="" width="50" height="50" />
+    <img src="../images/logo_1024.jpg" alt="" width="50" height="50" />
     <h1> Добро пожаловать на сайт Онлайн Органайзер для Организаций</h1>
 
     <div>Что интерестного в проекте:</div>

@@ -23,6 +23,10 @@ class User extends CActiveRecord
 {
     const STATUS_USER=0;
 	const STATUS_ADMIN=1;
+    
+     // для капчи
+    public $verifyCode;
+    
     /**
 	 * @return string the associated database table name
 	 */
@@ -40,13 +44,15 @@ class User extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('username, password, email, first_name, last_name, profile', 'required'),
-			array('admin, organisation_id, id', 'numerical', 'integerOnly'=>true),
+			array('admin', 'numerical', 'integerOnly'=>true),
+            array('id, username, email, first_name, last_name, profile, admin', 'safe'),
             array('admin', 'in', 'range'=>array(0,1)),
 			array('username, email, first_name, last_name', 'length', 'max'=>128),
 			array('password', 'length', 'max'=>64),
+            array('username, email', 'unique'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('username, email, first_name, last_name, profile, admin', 'safe', 'on'=>'search'),
+			array('id, username, email, first_name, last_name, profile, admin', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -131,6 +137,12 @@ class User extends CActiveRecord
         return CPasswordHelper::verifyPassword($password,$this->password);
     }
  
+    public function beforeSave(){
+        parent::beforeSave();
+        $this->password = $this->hashPassword($this->password);
+        return true;
+    }
+    
     public function hashPassword($password)
     {
         return CPasswordHelper::hashPassword($password);

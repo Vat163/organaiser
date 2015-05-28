@@ -64,7 +64,11 @@
                 </div>
                 
                 <div class="block endline">
-                    <input name="admin" id="admin" type="checkbox"><label for="admin" title="Админ* - может добавлять/удалять пользователей и выдавать задачи для любого сотрудника">Админ*</label>
+                    <label for="admin" title="Админ - может добавлять/удалять пользователей и выдавать задачи для любого работника">Админ?</label>
+                    <select name="admin" id="admin">
+                        <option value="1">Да</option>
+                        <option value="0">Нет</option>
+                    </select>
                 </div>
                 
                 <div id="padding" class="block endline">
