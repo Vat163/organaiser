@@ -2148,3 +2148,86 @@ Stack trace:
 REQUEST_URI=/user/user_edit
 in E:\XAMPP\htdocs\organiser\www\protected\controllers\UserController.php (127)
 in E:\XAMPP\htdocs\organiser\www\index.php (13)
+2015/06/01 15:06:22 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 E:\XAMPP\htdocs\organiser\framework\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 E:\XAMPP\htdocs\organiser\www\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+HTTP_REFERER=http://organiser.local/
+---
+2015/06/01 15:06:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "profile".' in E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CController.php:483
+Stack trace:
+#0 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CController.php(270): CController->missingAction('profile')
+#1 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CWebApplication.php(282): CController->run('profile')
+#2 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/profile')
+#3 E:\XAMPP\htdocs\organiser\framework\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 E:\XAMPP\htdocs\organiser\www\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/site/profile
+HTTP_REFERER=http://organiser.local/site/view
+---
+2015/06/01 15:23:44 [error] [php] Missing argument 3 for CHtml::activeDropDownList(), called in E:\XAMPP\htdocs\organiser\www\protected\views\user\user_edit.php on line 50 and defined (E:\XAMPP\htdocs\organiser\framework\yii\framework\web\helpers\CHtml.php:1978)
+Stack trace:
+#0 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CBaseController.php(95): UserController->renderInternal()
+#1 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CController.php(869): UserController->renderFile()
+#2 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CController.php(782): UserController->renderPartial()
+#3 E:\XAMPP\htdocs\organiser\www\protected\controllers\UserController.php(127): UserController->render()
+#4 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\actions\CInlineAction.php(49): UserController->actionUser_edit()
+#5 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#6 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CController.php(286): UserController->runAction()
+#7 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CController.php(265): UserController->runActionWithFilters()
+#8 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CWebApplication.php(282): UserController->run()
+#9 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#10 E:\XAMPP\htdocs\organiser\framework\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#11 E:\XAMPP\htdocs\organiser\www\index.php(13): CWebApplication->run()
+REQUEST_URI=/user/user_edit
+in E:\XAMPP\htdocs\organiser\www\protected\views\user\user_edit.php (50)
+in E:\XAMPP\htdocs\organiser\www\protected\controllers\UserController.php (127)
+in E:\XAMPP\htdocs\organiser\www\index.php (13)
+2015/06/01 16:03:50 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "profile".' in E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CController.php:483
+Stack trace:
+#0 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CController.php(270): CController->missingAction('profile')
+#1 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CWebApplication.php(282): CController->run('profile')
+#2 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/profile')
+#3 E:\XAMPP\htdocs\organiser\framework\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 E:\XAMPP\htdocs\organiser\www\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/site/profile
+HTTP_REFERER=http://organiser.local/site/new_task
+---
+2015/06/01 17:39:21 [error] [php] Undefined variable: user_edit (E:\XAMPP\htdocs\organiser\www\protected\views\user\user_edit.php:50)
+Stack trace:
+#0 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CController.php(869): UserController->renderFile()
+#1 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CController.php(782): UserController->renderPartial()
+#2 E:\XAMPP\htdocs\organiser\www\protected\controllers\UserController.php(129): UserController->render()
+#3 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\actions\CInlineAction.php(49): UserController->actionUser_edit()
+#4 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CController.php(286): UserController->runAction()
+#6 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CController.php(265): UserController->runActionWithFilters()
+#7 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CWebApplication.php(282): UserController->run()
+#8 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 E:\XAMPP\htdocs\organiser\framework\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 E:\XAMPP\htdocs\organiser\www\index.php(13): CWebApplication->run()
+REQUEST_URI=/user/user_edit
+in E:\XAMPP\htdocs\organiser\www\protected\views\user\user_edit.php (50)
+in E:\XAMPP\htdocs\organiser\www\protected\controllers\UserController.php (129)
+in E:\XAMPP\htdocs\organiser\www\index.php (13)
+2015/06/01 17:50:53 [error] [php] Undefined variable: user_edit (E:\XAMPP\htdocs\organiser\www\protected\views\user\user_edit.php:50)
+Stack trace:
+#0 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CController.php(869): UserController->renderFile()
+#1 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CController.php(782): UserController->renderPartial()
+#2 E:\XAMPP\htdocs\organiser\www\protected\controllers\UserController.php(122): UserController->render()
+#3 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\actions\CInlineAction.php(49): UserController->actionUser_edit()
+#4 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CController.php(286): UserController->runAction()
+#6 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CController.php(265): UserController->runActionWithFilters()
+#7 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CWebApplication.php(282): UserController->run()
+#8 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 E:\XAMPP\htdocs\organiser\framework\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 E:\XAMPP\htdocs\organiser\www\index.php(13): CWebApplication->run()
+REQUEST_URI=/user/user_edit
+in E:\XAMPP\htdocs\organiser\www\protected\views\user\user_edit.php (50)
+in E:\XAMPP\htdocs\organiser\www\protected\controllers\UserController.php (122)
+in E:\XAMPP\htdocs\organiser\www\index.php (13)

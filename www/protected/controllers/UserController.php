@@ -85,29 +85,33 @@ class UserController extends Controller
         if (Yii::app()->user->isGuest) {
              $this->redirect('/site/login');
         } else {
+            $user_list = CHtml::listData(User::model()->findAll(), 'id', 'username');
             // Если $_POST['User'] не пустой массив - значит была отправлена форма
             if (!empty($_POST['User'])) {
                 
                  // Заполняем $user данными которые пришли с формы
-                $user->attributes = $_POST['User'];
+                $user_edit->attributes = $_POST['User'];
                 
                 // В validate передаем название сценария
-                 if($user_edit->validate('registration')) {
-                    // Если валидация прошла успешно, проверяем свободен ли указанный логин
-                    $organisation = new Organisation();
-                    $organisation->name= $_POST['User']['organisation_name'];
-                    // Выводим страницу "ок"        
-                    $organisation->save();
-                    $user_edit->organisation_id = $organisation->id;
-                    $user_edit->save();
-                    $model=new LoginForm;
-                    $model->username=$_POST['User']['username'];
-                    $model->password=$_POST['User']['password'];
-                    $model->rememberMe=true;
-                    $model->login();
-                    $this->render('registration_ok', array(
-                        'data' => $user_edit,
-                    ));
+                if($user_edit->validate('user_edit')) {
+                    // Если валидация прошла успешно, ...
+                    
+                    if ($_POST['new_user']) {
+                        $user_edit->save();
+                    }
+                    
+                    if ($_POST['del_user']) {
+                        $user_edit=User::model()->find(username);
+                        $user_edit->delete();
+                    }
+                    
+                    if ($_POST['del_organisation']) {
+                        $user_edit=User::model()->find($this->organisation_id);
+                        $organisation = new Organisation();
+                        $organisation = $organisation->$user_edit;
+                        $organisation->delete();
+                    }
+                    
 
                 } else {
                     // Если введенные данные противоречат 
@@ -116,15 +120,14 @@ class UserController extends Controller
 
                     $this->render('user_edit', array(
                         'form' => $user_edit,
-                        'org_name'=> $_POST['User']['organisation_name'],
+                        'user_edit' => $user_list,
                     ));
                 }
             } else {
                 // Если $_POST['User'] пустой массив - значит форму некто не отправлял.
                 // Значит пользователь просто вошел на страницу edit
                 // и мы должны показать ему форму.
-                 
-                $this->render('user_edit', array('form' => $user_edit));
+                $this->render('user_edit', array('form' => $user_edit, 'user_edit' => $user_list,));
             }
         }
     }

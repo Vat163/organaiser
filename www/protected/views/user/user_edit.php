@@ -2,7 +2,7 @@
  <!-- То самое место где будут выводиться ошибки
      если они будут при валидации !-->
 <?=CHtml::errorSummary($form); ?><br>
-Добавитьпользователя
+Добавить пользователя
     <table id="form2" border="0" width="400" cellpadding="10" cellspacing="10">
         <tr>
             <!-- Выводим поле для логина !-->
@@ -43,16 +43,11 @@
     </table>
 
 Удалить пользователя
-<table id="form2" border="0" width="400" cellpadding="10" cellspacing="10">
+    <table id="form3" border="0" width="400" cellpadding="10" cellspacing="10">
         <tr>
             <!-- Выводим поле для логина !-->
             <td width="150"><?=CHtml::activeLabel($form, 'username'); ?></td>
-            <td><?=CHtml::activeTextField($form, 'username') ?></td>
-        </tr>
-        <tr>
-            <!-- Выводим поле для email !-->
-            <td width="150"><?=CHtml::activeLabel($form, 'email'); ?></td>
-            <td><?=CHtml::activeEmailField($form, 'email') ?></td>
+            <td><?=CHtml::activeDropDownList($form, 'username', $user_edit) ?></td>
         </tr>
 
         <tr>
@@ -62,17 +57,17 @@
         </tr>
     </table>
 
-Удалить организацию
-<table id="form2" border="0" width="400" cellpadding="10" cellspacing="10">
+Удалить организацию (введите ваш username и пароль)
+    <table id="form4" border="0" width="400" cellpadding="10" cellspacing="10">
         <tr>
             <!-- Выводим поле для логина !-->
             <td width="150"><?=CHtml::activeLabel($form, 'username'); ?></td>
             <td><?=CHtml::activeTextField($form, 'username') ?></td>
         </tr>
         <tr>
-            <!-- Выводим поле для email !-->
-            <td width="150"><?=CHtml::activeLabel($form, 'email'); ?></td>
-            <td><?=CHtml::activeEmailField($form, 'email') ?></td>
+            <!-- Выводим поле для пароля !-->
+            <td><?=CHtml::activeLabel($form, 'password'); ?></td>
+            <td><?=CHtml::activePasswordField($form, 'password') ?></td>
         </tr>
 
         <tr>
