@@ -1,9 +1,3 @@
-<?php
-    if (!empty($_POST['submited'])) {
-        $date = $_POST['datetime'];
-        echo('date');
-    }
-?>
 <!DOCTYPE HTML>
 <html>
     <head>
@@ -77,16 +71,12 @@
             <div class="clearfix"></div>
             </div>
         </div>
+
         <div class="container">
 
-        <form action="footer.php" metod="POST">
-            <input type="date" id="inputEmail" class="form-control">
-            <input type="time" id="inputEmail" class="form-control">
-            <input type="datetime-local" id="inputEmail" class="form-control" name="datetime">
-            <input type="submit" class="btn" name="submited">
-        </form>
         
         </div>
+        
         <div class="footer">
             <div class="footer-text">
                 <ul class="footer-links">

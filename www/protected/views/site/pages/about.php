@@ -8,5 +8,5 @@ $this->breadcrumbs=array(
 ?>
 <h1>About</h1>
 
-<p>This is a "static" page. You may change the content of this page
-by updating the file <code><?php echo __FILE__; ?></code>.</p>
+<h2>Проект разрабатывался как дипломная работа студента ПГУТИ направления ФИСТ в 2015г</h2>
+<h3>Проект развивается и в будущем будет размещен на хостинге</h3>

@@ -2,10 +2,8 @@
  <h2>Список юзеров:</h2>
  <h3>
     <ul>
-        <?php 
-        foreach ($registered_users as $user) {
-            echo ‘<li>Логин:'.$user->username.' Пароль:'.$user->password.'</li>’;
-        }
+        <?php     
+            echo '<li>Логин:'.$data->username.'</li>';
         ?>
     </ul>
  </h3>

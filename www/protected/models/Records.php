@@ -9,7 +9,6 @@
  * @property string $content
  * @property string $start_date
  * @property string $finish_date
- * @property string $url
  * @property integer $user_id
  *
  * The followings are the available model relations:
@@ -34,10 +33,10 @@ class Records extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('title, content, start_date, finish_date', 'required'),
-			array('title, url', 'length', 'max'=>128),
+			array('title', 'length', 'max'=>128),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('title, content, start_date, finish_date, url', 'safe', 'on'=>'search'),
+			array('id, title, content, start_date, finish_date, user_id', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -72,7 +71,6 @@ class Records extends CActiveRecord
 			'content' => 'Content',
 			'start_date' => 'Start Date',
 			'finish_date' => 'Finish Date',
-			'url' => 'Url',
 			'user_id' => 'User',
 		);
 	}
@@ -100,7 +98,6 @@ class Records extends CActiveRecord
 		$criteria->compare('content',$this->content,true);
 		$criteria->compare('start_date',$this->start_date,true);
 		$criteria->compare('finish_date',$this->finish_date,true);
-		$criteria->compare('url',$this->url,true);
 		$criteria->compare('user_id',$this->user_id);
 
 		return new CActiveDataProvider($this, array(
@@ -118,19 +115,5 @@ class Records extends CActiveRecord
 	{
 		return parent::model($className);
 	}
-    
-    protected function beforeSave()
-    {
-        if(parent::beforeSave())
-        {
-            if($this->isNewRecord)
-            {
-                $this->user_id=Yii::app()->user->id;
-                return true;
-            }
-        }
-        else
-            return false;
-    }
     
 }

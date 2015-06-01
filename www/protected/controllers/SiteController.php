@@ -71,7 +71,7 @@ class SiteController extends Controller
 					"Content-Type: text/plain; charset=UTF-8";
 
 				mail(Yii::app()->params['adminEmail'],$subject,$model->body,$headers);
-				Yii::app()->user->setFlash('contact','Thank you for contacting us. We will respond to you as soon as possible.');
+				Yii::app()->user->setFlash('contact','Спасибо что связались с нами. Мы ответим вам так скоро, насколько это возможно.');
 				$this->refresh();
 			}
 		}
@@ -98,12 +98,81 @@ class SiteController extends Controller
 			$model->attributes=$_POST['LoginForm'];
 			// validate user input and redirect to the previous page if valid
 			if($model->validate() && $model->login())
+            {
 				$this->redirect(Yii::app()->user->returnUrl);
-		}
+            }
+        }
 		// display the login form
 		$this->render('login',array('model'=>$model));
 	}
 
+    public function actionNew_task(){
+    
+        $records = new Records();
+        
+        // Проверяем гость ли пользователь (если да - перенаправляем на страницу входа)
+        if (Yii::app()->user->isGuest) {
+             $this->redirect('/site/login');
+        } else {
+            // Если $_POST['Records'] не пустой массив - значит была отправлена форма
+            if (!empty($_POST['Records'])) {
+                
+                // Заполняем $records данными которые пришли с формы
+                $records->attributes = $_POST['Records'];
+                
+                     // В validate передаем название сценария
+                     if($records->validate()) {
+                        // Если валидация прошла успешно, записываем все в бд
+                        $records->user_id=Yii::app()->user->id;
+                        $records->save();
+                        $this->redirect('view');
+                        
+                     } else {
+                        // Если введенные данные противоречат 
+                        // правилам валидации (указаным в rules) тогда
+                        // выводим форму и ошибки
+                        
+                        $this->render('new_task', array(
+                            'form' => $records,
+                        ));
+                    }
+             } else {
+                // Если $_POST['Records'] пустой массив - значит форму некто не отправлял.
+                // Значит пользователь просто вошел на страницу регистрации
+                // и мы должны показать ему форму.
+                 
+                $this->render('new_task', array('form' => $records));
+            }
+        }
+    
+    }
+    
+    public function actionView(){
+    
+        $records = new Records();
+        
+        // Проверяем гость ли пользователь (если да - перенаправляем на страницу входа)
+        
+        if (Yii::app()->user->isGuest) {
+             $this->redirect('/site/login');
+        } else {
+            $records=Records::model()->findAll('user_id=:usr_id', array(':usr_id' => Yii::app()->user->id));
+            if (Records::model()->count(new CDbCriteria (array(
+                    'condition' => 'user_id = :usr_id',
+                    'params' => array(':usr_id' => Yii::app()->user->id),
+                    )))
+               <1
+               )
+            {
+                echo ('У вас пока нет задач');
+            };
+            $this->render('view', array(
+                            'form' => $records,
+                        ));
+        }
+    }
+    
+    
 	/**
 	 * Logs out the current user and redirect to homepage.
 	 */
