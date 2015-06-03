@@ -28,20 +28,20 @@
 	<!-- header -->
 
 	<div id="mainmenu">
+		<?php $user = User::model()->findByPk(Yii::app()->user->id); ?>
 		<?php $this->widget('zii.widgets.CMenu',array(
 			'items'=>array(
 				array('label'=>'Home', 'url'=>array('/site/index')),
-				array('label'=>'About', 'url'=>array('/site/page', 'view'=>'about')),
-				array('label'=>'Связаться с нами', 'url'=>array('/site/contact')),
+				array('label'=>'О сайте', 'url'=>array('/site/page', 'view'=>'about'), 'visible'=>Yii::app()->user->isGuest),
+				
 				array('label'=>'Вход', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
                 array('label'=>'Регистрация', 'url'=>array('/user/registration'), 'visible'=>Yii::app()->user->isGuest),
-                
                 array('label'=>'Создать задачу', 'url'=>array('/site/new_task'), 'visible'=>!Yii::app()->user->isGuest),
-				array('label'=>'Просмотр задач', 'url'=>array('/site/view'), 'visible'=>!Yii::app()->user->isGuest), 
                 array('label'=>'Редактировать профиль', 'url'=>array('/site/profile'), 'visible'=>!Yii::app()->user->isGuest), 
-                array('label'=>'Добавить/удалить пользователя', 'url'=>array('/user/user_edit'), 'visible'=>!Yii::app()->user->isGuest), 
+                array('label'=>'Добавить/удалить пользователя', 'url'=>array('/user/user_edit'), 'visible'=>!Yii::app()->user->isGuest && $user->admin==1), 
+                array('label'=>'Учет времени сотрудников', 'url'=>array('/site/organisation_info'), 'visible'=>!Yii::app()->user->isGuest && $user->admin==1), 
                 
-				array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
+				array('label'=>'Выйти ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
 			),
 		)); ?>
 	</div>
@@ -59,8 +59,9 @@
 
 	<div id="footer">
 	    Онлайн Органайзер для Организаций v1.0 <br/>
-		Copyright &copy; <?php echo date('Y'); ?> All Rights Reserved.<br/>
-		<?php echo Yii::powered(); ?>
+		Copyright &copy; <?php echo date('Y'); ?> All Rights Reserved<br/>
+		<?php echo Yii::powered(); ?><br>
+		<a href="/site/contact">Связаться с нами</a>
 	</div>
 	<!-- footer -->
 

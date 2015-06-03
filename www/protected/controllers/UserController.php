@@ -2,10 +2,6 @@
 
 class UserController extends Controller
 {
-	public function actionIndex()
-	{
-		$this->render('index');
-	}
     
 	public function actions()
 	{
@@ -85,7 +81,11 @@ class UserController extends Controller
         if (Yii::app()->user->isGuest) {
              $this->redirect('/site/login');
         } else {
-            $user_list = CHtml::listData(User::model()->findAll(), 'id', 'username');
+            $current_user = User::model()->findByPk(Yii::app()->user->id);
+            $user_org = $current_user->organisation_id;
+            $user_list = CHtml::listData(User::model()->findAll('organisation_id=:usr_org', array(':usr_org' => $user_org)), 'id', 'username');
+            unset($user_list[Yii::app()->user->id]);
+            if (empty($user_list)){ $user_empty='У вас пока нету сотрудников';} else {$user_empty='';}
             // Если $_POST['User'] не пустой массив - значит была отправлена форма
             if (!empty($_POST['User'])) {
                 
@@ -96,22 +96,38 @@ class UserController extends Controller
                 if($user_edit->validate('user_edit')) {
                     // Если валидация прошла успешно, ...
                     
-                    if ($_POST['new_user']) {
-                        $user_edit->save();
+                    if(isset($_POST['new_user'])){
+                        $user = new User;
+                        $user->attributes = $_POST['User'];
+                        if($user->validate('registration')) {
+                            $user_org = User::model()->findByPk(Yii::app()->user->id);
+                            $org = $user_org->organisation_id;
+                            $user = save();
+                            $this->render('registration_ok', array(
+                                'data' => $user,
+                            ));    
+                        }
                     }
-                    
-                    if ($_POST['del_user']) {
-                        $user_edit=User::model()->find(username);
+                
+                    if (isset($_POST['del_user'])) {
+                        $user_edit=User::model()->findByPk($_POST['username']);
                         $user_edit->delete();
                     }
                     
-                    if ($_POST['del_organisation']) {
-                        $user_edit=User::model()->find($this->organisation_id);
-                        $organisation = new Organisation();
-                        $organisation = $organisation->$user_edit;
-                        $organisation->delete();
+                    if (isset($_POST['del_organisation'])) {
+                        $login = $_POST['username'];
+                        $email = $_POST['email'];
+                        $user = User::model()->findByPk(Yii::app()->user->id);
+                        if($user->admin==1 && $user->usename==$login && $user->email==$email){
+                            $organisation = Records::model()->findByPk($user->organisation_id);
+                            $organisation->delete();
+                        }
                     }
-                    
+                    $this->render('user_edit', array(
+                        'form' => $user_edit,
+                        'user_edit' => $user_list,
+                        'user_empty' => $user_empty,
+                    ));
 
                 } else {
                     // Если введенные данные противоречат 
@@ -121,15 +137,20 @@ class UserController extends Controller
                     $this->render('user_edit', array(
                         'form' => $user_edit,
                         'user_edit' => $user_list,
+                        'user_empty' => $user_empty,
                     ));
                 }
             } else {
                 // Если $_POST['User'] пустой массив - значит форму некто не отправлял.
                 // Значит пользователь просто вошел на страницу edit
                 // и мы должны показать ему форму.
-                $this->render('user_edit', array('form' => $user_edit, 'user_edit' => $user_list,));
+                $this->render('user_edit', array(
+                    'form' => $user_edit, 
+                    'user_list' => $user_list,
+                    'user_empty' => $user_empty,
+                    )
+                );
             }
         }
-    }
-    
+    } 
 }

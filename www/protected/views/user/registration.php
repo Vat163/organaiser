@@ -1,17 +1,23 @@
 <?=CHtml::form(); ?>
- <!-- То самое место где будут выводиться ошибки
+<?php 
+$this->pageTitle=Yii::app()->name . ' - registration';
+$this->breadcrumbs=array(
+	'Регистрация',
+);
+?> 
+<!-- То самое место где будут выводиться ошибки
      если они будут при валидации !-->
 <?=CHtml::errorSummary($form); ?><br>
 
     <table id="form2" border="0" width="400" cellpadding="10" cellspacing="10">
         <tr>
             <!-- Выводим поле для логина !-->
-            <td width="150"><?=CHtml::activeLabel($form, 'username'); ?></td>
+            <td width="150"><?=CHtml::activeLabel($form, 'username', array('label' => 'Логин')); ?></td>
             <td><?=CHtml::activeTextField($form, 'username') ?></td>
         </tr>
         <tr>
             <!-- Выводим поле для пароля !-->
-            <td><?=CHtml::activeLabel($form, 'password'); ?></td>
+            <td><?=CHtml::activeLabel($form, 'password', array('label' => 'Пароль')); ?></td>
             <td><?=CHtml::activePasswordField($form, 'password') ?></td>
         </tr>
         <tr>
@@ -21,22 +27,22 @@
         </tr>
         <tr>
             <!-- Выводим поле для first_name !-->
-            <td width="150"><?=CHtml::activeLabel($form, 'first_name'); ?></td>
+            <td width="150"><?=CHtml::activeLabel($form, 'first_name', array('label' => 'Имя')); ?></td>
             <td><?=CHtml::activeTextField($form, 'first_name') ?></td>
         </tr>
         <tr>
             <!-- Выводим поле для last_name !-->
-            <td width="150"><?=CHtml::activeLabel($form, 'last_name'); ?></td>
+            <td width="150"><?=CHtml::activeLabel($form, 'last_name', array('label' => 'Фамилия')); ?></td>
             <td><?=CHtml::activeTextField($form, 'last_name') ?></td>
         </tr>
         <tr>
             <!-- Выводим поле для profile !-->
-            <td width="150"><?=CHtml::activeLabel($form, 'profile'); ?></td>
+            <td width="150"><?=CHtml::activeLabel($form, 'profile', array('label' => 'Должность')); ?></td>
             <td><?=CHtml::activeTextField($form, 'profile') ?></td>
         </tr>
         <tr>
             <!-- Выводим поле для organisation_name !-->
-            <td width="150"><label for="User_organisation_name">Organisation name</label></td>
+            <td width="150"><label for="User_organisation_name">Название организации</label></td>
             <td><input name="User[organisation_name]" value="<?php if(isset($org_name)){echo $org_name;} ?>" id="User_organisation_name" type="text" /></td>
         </tr>
 

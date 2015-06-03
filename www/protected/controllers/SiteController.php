@@ -34,7 +34,24 @@ class SiteController extends Controller
             $this->render('GuestIndex');
         } else if(Yii::app()->user->id)
 		{
-            $this->render('index');
+            $records = new Records();
+        
+            // Проверяем гость ли пользователь (если да - перенаправляем на страницу входа)
+        
+            if (Yii::app()->user->isGuest) {
+                 $this->redirect('/site/login');
+            } else {
+                $records=Records::model()->findAll('user_id=:usr_id', array(':usr_id' => Yii::app()->user->id));
+                if (
+                       count($records)==0
+                   )
+                    {$empty = 'У вас пока нет задач';} else {$empty='';};
+                $this->render('view', array(
+                                'form' => $records,
+                                'empty' => $empty,
+                                )
+                             );
+            }
         }
 	}
 
@@ -157,19 +174,49 @@ class SiteController extends Controller
              $this->redirect('/site/login');
         } else {
             $records=Records::model()->findAll('user_id=:usr_id', array(':usr_id' => Yii::app()->user->id));
-            if (Records::model()->count(new CDbCriteria (array(
-                    'condition' => 'user_id = :usr_id',
-                    'params' => array(':usr_id' => Yii::app()->user->id),
-                    )))
-               <1
-               )
-            {
-                echo ('У вас пока нет задач');
-            };
+            if (count($records)==0
+               ){$empty = 'У вас пока нет задач';} else {$empty='';};
             $this->render('view', array(
                             'form' => $records,
+                            'empty' => $empty,
                         ));
         }
+    }
+
+    public function actionOrganisation_info(){
+        
+        if (Yii::app()->user->isGuest) {
+             $this->redirect('/site/login');
+        } else {
+            $user = User::model()->findByPk(Yii::app()->user->id);
+            if($user->admin == 1){
+                // находим всех юзеров с орг_id как у админа
+                $user = User::model()->findAll('organisation_id=:org_id', array(':org_id' => $user->organisation_id));
+                
+                foreach($user as $usr)
+                {
+                    $user_id = $usr->id;
+                    // теперь в some_records лежит строка из бд для каждого пользвателя
+                    $some_records = Records::model()->findAll('user_id=:usr_id', array(':usr_id' => $user_id));
+                    $all_records[$user_id] = $some_records;
+                }
+//                if (
+//                    count($usr_rec->id)==0
+//                )
+//                {$empty = 'У данного сотрудника пока нет задач';} else {$empty='';};
+                
+                $this->render('organisation_info', array(
+                        //'form' => $records,
+                        //'empty' => $empty,
+                        'user' => $user,
+                        'all_records' => $all_records,
+                    )
+                );
+            }
+        }
+        
+        
+        
     }
     
     
