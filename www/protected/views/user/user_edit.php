@@ -1,7 +1,19 @@
+<?php
+    $this->pageTitle=Yii::app()->name . ' - Редактировать организацию';
+    $this->breadcrumbs=array(
+	'Редактировать организацию',
+    );
+    $current_user = User::model()->findByPk(Yii::app()->user->id);
+    $user_org = $current_user->organisation_id;    
+    $user_list = CHtml::listData(User::model()->findAll('organisation_id=:usr_org', array(':usr_org' => $user_org)), 'id', 'username');
+    unset($user_list[Yii::app()->user->id]);
+?>
 <?=CHtml::form(); ?>
- <!-- То самое место где будут выводиться ошибки
+    <!-- То самое место где будут выводиться ошибки
      если они будут при валидации !-->
-<?=CHtml::errorSummary($form); ?><br>
+
+<div class="errorList bg-danger"><?=CHtml::errorSummary($form); ?></div>
+<div class="clearfix"></div>
 Добавить пользователя
     <table id="form2" border="0" width="400" cellpadding="10" cellspacing="10">
         <tr>
@@ -46,11 +58,18 @@
         <tr>
             <td></td>
             <!-- Кнопка "Добавить пользователя" !-->
-             <td><?=CHtml::submitButton('Добавить пользователя', array('id' => "new_user")); ?></td>
+             <td><?=CHtml::submitButton('Добавить пользователя', array('class' => "btn btn-success", 'name' => 'new_user')); ?></td>
         </tr>
     </table>
 <?=CHtml::endForm(); ?>
 <?=CHtml::form(); ?>
+<?php 
+    if (empty($user_list)){ 
+        $user_empty='У вас пока нету сотрудников';
+    } else {
+        $user_empty='';
+    }
+?>
 Удалить пользователя
     <table id="form3" border="0" width="400" cellpadding="10" cellspacing="10">
         <tr>
@@ -65,14 +84,14 @@
         <tr>
             <td></td>
             <!-- Кнопка "Удалить пользователя" !-->
-             <td><?=CHtml::submitButton('Удалить пользователя', array('id' => "del_user")); ?></td>
+             <td><?=CHtml::submitButton('Удалить пользователя', array('class' => "btn btn-warning", 'name' => 'del_user')); ?></td>
         </tr>
     </table>
 <?=CHtml::endForm(); ?>
 
 <?=CHtml::form(); ?>
-<?=CHtml::errorSummary($form); ?><br>
-Удалить организацию (введите ваш Логин и Email)
+Удалить организацию (введите ваш Логин и Email)<br>
+<?php if(isset($error_del)){echo $error_del;} ?>
     <table id="form4" border="0" width="400" cellpadding="10" cellspacing="10">
         <tr>
             <!-- Выводим поле для логина !-->
@@ -88,7 +107,7 @@
         <tr>
             <td></td>
             <!-- Кнопка "Удалить организацию" !-->
-             <td><?=CHtml::submitButton('Удалить организацию', array('id' => "del_organisation")); ?></td>
+             <td><?=CHtml::submitButton('Удалить организацию', array('class' => "btn btn-danger", 'name' => 'del_organisation')); ?></td>
         </tr>
     </table>
 

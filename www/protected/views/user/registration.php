@@ -1,62 +1,64 @@
+<?php
+    Yii::app()->clientScript->registerCssFile('/css/registration.css'); 
+?>
 <?=CHtml::form(); ?>
 <?php 
-$this->pageTitle=Yii::app()->name . ' - registration';
-$this->breadcrumbs=array(
-	'Регистрация',
-);
+    $this->pageTitle=Yii::app()->name . ' - registration';
+    $this->breadcrumbs=array(
+        'Регистрация',
+    );
 ?> 
-<!-- То самое место где будут выводиться ошибки
-     если они будут при валидации !-->
-<?=CHtml::errorSummary($form); ?><br>
-
-    <table id="form2" border="0" width="400" cellpadding="10" cellspacing="10">
-        <tr>
-            <!-- Выводим поле для логина !-->
-            <td width="150"><?=CHtml::activeLabel($form, 'username', array('label' => 'Логин')); ?></td>
-            <td><?=CHtml::activeTextField($form, 'username') ?></td>
-        </tr>
-        <tr>
-            <!-- Выводим поле для пароля !-->
-            <td><?=CHtml::activeLabel($form, 'password', array('label' => 'Пароль')); ?></td>
-            <td><?=CHtml::activePasswordField($form, 'password') ?></td>
-        </tr>
-        <tr>
-            <!-- Выводим поле для email !-->
-            <td width="150"><?=CHtml::activeLabel($form, 'email'); ?></td>
-            <td><?=CHtml::activeEmailField($form, 'email') ?></td>
-        </tr>
-        <tr>
-            <!-- Выводим поле для first_name !-->
-            <td width="150"><?=CHtml::activeLabel($form, 'first_name', array('label' => 'Имя')); ?></td>
-            <td><?=CHtml::activeTextField($form, 'first_name') ?></td>
-        </tr>
-        <tr>
-            <!-- Выводим поле для last_name !-->
-            <td width="150"><?=CHtml::activeLabel($form, 'last_name', array('label' => 'Фамилия')); ?></td>
-            <td><?=CHtml::activeTextField($form, 'last_name') ?></td>
-        </tr>
-        <tr>
-            <!-- Выводим поле для profile !-->
-            <td width="150"><?=CHtml::activeLabel($form, 'profile', array('label' => 'Должность')); ?></td>
-            <td><?=CHtml::activeTextField($form, 'profile') ?></td>
-        </tr>
-        <tr>
-            <!-- Выводим поле для organisation_name !-->
-            <td width="150"><label for="User_organisation_name">Название организации</label></td>
-            <td><input name="User[organisation_name]" value="<?php if(isset($org_name)){echo $org_name;} ?>" id="User_organisation_name" type="text" /></td>
-        </tr>
-
-        <tr>
-            <!-- Выводим капчу !-->
-            <td><?php $this->widget('CCaptcha', array('buttonLabel' => '<br>[новый код]')); ?></td>
-             <td><?=CHtml::activeTextField($form,'verifyCode'); ?></td>
-        </tr>
-        <tr>
-            <td></td>
-            <!-- Кнопка "регистрация" !-->
-             <td><?=CHtml::submitButton('Регистрация', array('id' => "submit")); ?></td>
-        </tr>
-    </table>
-
+    <div class="container">
+            <div class="row">
+                
+                <div class="title">Введите ваши данные для регистрации</div>
+                <div class="block">
+                    <div class="pull-left data">
+                        <?=CHtml::activeLabel($org, 'name', array('label' => 'Организация')); ?>
+                        <?=CHtml::activeTextField($org, 'name', array('class' => 'data-inputs')); ?>
+                    </div>
+                    <div class="pull-left data">
+                        <?=CHtml::activeLabel($form, 'profile', array('label' => 'Должность')); ?>
+                        <?=CHtml::activeTextField($form, 'profile', array('class' => 'data-inputs')); ?>
+                    </div>
+                    <div class="pull-left data">
+                        <?=CHtml::activeLabel($form, 'first_name', array('label' => 'Имя')); ?>
+                        <?=CHtml::activeTextField($form, 'first_name', array('class' => 'data-inputs')); ?>
+                    </div>
+                    <div class="pull-left data">
+                        <?=CHtml::activeLabel($form, 'last_name', array('label' => 'Фамилия')); ?>
+                        <?=CHtml::activeTextField($form, 'last_name', array('class' => 'data-inputs')); ?>
+                    </div>
+                </div>
+                
+                <div class="clearfix"></div>
+                
+                <div class="block">
+                    <div class="pull-left data">
+                        <?=CHtml::activeLabel($form, 'username', array('label' => 'Логин')); ?>
+                        <?=CHtml::activeTextField($form, 'username', array('class' => 'data-inputs')); ?>
+                    </div>
+                    <div class="pull-left data">
+                        <!-- Выводим поле для пароля !-->
+                        <?=CHtml::activeLabel($form, 'password', array('label' => 'Пароль')); ?>
+                        <?=CHtml::activePasswordField($form, 'password', array('class' => 'data-inputs')); ?>
+                    </div>
+                    <div class="pull-left data">
+                        <!-- Выводим поле для email !-->
+                        <?=CHtml::activeLabel($form, 'email'); ?>
+                        <?=CHtml::activeEmailField($form, 'email', array('class' => 'data-inputs')); ?>
+                    </div>
+                </div>
+                    
+                <div class="block endline"></div>
+                    <?=CHtml::submitButton('Регистрация', array('class' => "btn btn-success")); ?>
+                <div id="padding" class="block endline"></div>
+                <!-- ошибки при валидации !-->
+                <div class="bg-danger">
+                <?=CHtml::errorSummary($form); ?>
+                <?=CHtml::errorSummary($org); ?>
+                </div>
+            </div>
+    </div>
 <!-- Закрываем форму !-->
  <?=CHtml::endForm(); ?>

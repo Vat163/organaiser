@@ -49,8 +49,7 @@ class SiteController extends Controller
                 $this->render('view', array(
                                 'form' => $records,
                                 'empty' => $empty,
-                                )
-                             );
+                ));
             }
         }
 	}
@@ -218,7 +217,30 @@ class SiteController extends Controller
         
         
     }
-    
+    public function actionChat(){
+        $chat = new Chat;
+        
+        $user = User::model()->findByPk(Yii::app()->user->id);
+        $org_id = $user->organisation_id;
+        if (isset($_POST['text'])){
+            $chat->message = $_POST['text'];
+            $chat->user_id = Yii::app()->user->id;
+            $chat->org_id = $org_id;
+            $chat->save();
+        }
+        $org_name = Organisation::model()->findByPk($org_id);
+        $org_name = $org_name->name;
+        $chat_record = Chat::model()->findAll(array(
+            'order' => 'date',
+            'limit' => 100,
+            'condition' => 'org_id = '.$org_id,
+        ));
+        $this->render('chat', array(
+                        'chat_record' => $chat_record,
+                        'org_name' => $org_name,
+            )
+        );
+    }
     
 	/**
 	 * Logs out the current user and redirect to homepage.

@@ -30,7 +30,7 @@ class Chat extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('message' 'required'),
+			array('message', 'required'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('message, date', 'safe', 'on'=>'search'),
@@ -46,6 +46,7 @@ class Chat extends CActiveRecord
 		// class name for the relations automatically generated below.
 		return array(
 			'user' => array(self::BELONGS_TO, 'User', 'user_id'),
+            'organisation' => array(self::BELONGS_TO, 'Organisation', 'org_id'),
 		);
 	}
 
