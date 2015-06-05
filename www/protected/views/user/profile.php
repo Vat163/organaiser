@@ -24,7 +24,6 @@
 
 <?=CHtml::form(); ?>
     <div>Изменить пароль</div>
-    <div class="errorList bg-danger"><?php if (isset($wrong_pass)){echo $wrong_pass;} ?></div><br>
     <div>
         <label for="old_password">Старый пароль:</label>
         <input name="old_password" id="old_password" type="password" maxlength="64">

@@ -1,4 +1,5 @@
 <?php
+    Yii::app()->clientScript->registerScriptFile('/js/script.js',CClientScript::POS_HEAD);
     $this->pageTitle=Yii::app()->name . ' - Редактировать организацию';
     $this->breadcrumbs=array(
 	'Редактировать организацию',
@@ -76,12 +77,12 @@
         <tr>
             <!-- Выводим поле для выбора логина !-->
             <td width="150"><?=CHtml::activeLabel($form, 'username', array('label' => 'Логин')); ?></td>
-            <td><?=CHtml::activeDropDownList($form, 'username', $user_list) ?></td>
+            <td><?=CHtml::activeDropDownList($form, 'username', $user_list, array('class' => 'users')) ?></td>
         </tr>
         <tr>
             <td></td>
             <!-- Кнопка "Удалить пользователя" !-->
-             <td><?=CHtml::submitButton('Удалить пользователя', array('class' => "btn btn-warning", 'name' => 'del_user')); ?></td>
+             <td><?=CHtml::submitButton('Удалить пользователя', array('class' => 'user_del btn btn-warning', 'name' => 'del_user')); ?></td>
         </tr>
     </table>
 <?=CHtml::endForm(); ?>
