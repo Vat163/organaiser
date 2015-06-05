@@ -199,21 +199,41 @@ class SiteController extends Controller
                     $some_records = Records::model()->findAll('user_id=:usr_id', array(':usr_id' => $user_id));
                     $all_records[$user_id] = $some_records;
                 }
-//                if (
-//                    count($usr_rec->id)==0
-//                )
-//                {$empty = 'У данного сотрудника пока нет задач';} else {$empty='';};
-                
+
                 $this->render('organisation_info', array(
-                        //'form' => $records,
-                        //'empty' => $empty,
                         'user' => $user,
                         'all_records' => $all_records,
                     )
                 );
             }
         }
+    }
+    public function actionProfile(){
         
+        $user_edit = new User();
+        
+        // Проверяем гость ли пользователь (если да - пересылаем его на страницу входа)
+        if (Yii::app()->user->isGuest) {
+             $this->redirect('/site/login');
+        } else {
+            // Проверка кнопок
+            if(isset($_POST['new_user'])){
+                // Заполняем $user данными которые пришли с формы
+                $user = new User;
+                $user->attributes = $_POST['User'];
+                if($user->validate()) {
+                    $user_row = User::model()->findByPk(Yii::app()->user->id);
+                    $org = $user_row->organisation_id;
+                    $user->organisation_id = $org;
+                    $user->save();
+                    $this->render('user_edit', array(
+                        'form' => $user_edit,
+                    ));
+                } else {
+                    $this->render('user_edit', array(
+                        'form' => $user,
+                    ));
+                }
         
         
     }

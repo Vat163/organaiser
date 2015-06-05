@@ -42,6 +42,7 @@
                             // Для админа
                             array('label'=>'Редактировать организацию', 'url'=>array('/user/user_edit'), 'visible'=>!Yii::app()->user->isGuest && $user->admin==1),
                             array('label'=>'Учет времени сотрудников', 'url'=>array('/site/organisation_info'), 'visible'=>!Yii::app()->user->isGuest && $user->admin==1), 
+                            array('label'=>'Чат', 'url'=>array('/site/chat'), 'visible'=>!Yii::app()->user->isGuest), 
 
                             array('label'=>'Вход', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
                             array('label'=>'Регистрация', 'url'=>array('/user/registration'), 'visible'=>Yii::app()->user->isGuest),

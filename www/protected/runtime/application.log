@@ -6618,3 +6618,178 @@ REQUEST_URI=/
 in E:\XAMPP\htdocs\organiser\www\protected\views\site\view.php (20)
 in E:\XAMPP\htdocs\organiser\www\protected\controllers\SiteController.php (52)
 in E:\XAMPP\htdocs\organiser\www\index.php (13)
+2015/06/05 08:41:16 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 E:\XAMPP\htdocs\organiser\framework\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 E:\XAMPP\htdocs\organiser\www\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+HTTP_REFERER=http://organiser.local/
+---
+2015/06/05 08:41:17 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 E:\XAMPP\htdocs\organiser\framework\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 E:\XAMPP\htdocs\organiser\www\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+HTTP_REFERER=http://organiser.local/
+---
+2015/06/05 08:50:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "profile".' in E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CController.php:483
+Stack trace:
+#0 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CController.php(270): CController->missingAction('profile')
+#1 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CWebApplication.php(282): CController->run('profile')
+#2 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/profile')
+#3 E:\XAMPP\htdocs\organiser\framework\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 E:\XAMPP\htdocs\organiser\www\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/site/profile
+HTTP_REFERER=http://organiser.local/user/user_edit
+---
+2015/06/05 11:23:00 [error] [php] Undefined index: User (E:\XAMPP\htdocs\organiser\www\protected\controllers\UserController.php:89)
+Stack trace:
+#0 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CController.php(286): UserController->runAction()
+#1 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CController.php(265): UserController->runActionWithFilters()
+#2 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CWebApplication.php(282): UserController->run()
+#3 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 E:\XAMPP\htdocs\organiser\framework\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#5 E:\XAMPP\htdocs\organiser\www\index.php(13): CWebApplication->run()
+REQUEST_URI=/user/user_edit
+in E:\XAMPP\htdocs\organiser\www\protected\controllers\UserController.php (89)
+in E:\XAMPP\htdocs\organiser\www\index.php (13)
+2015/06/05 11:32:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "profile".' in E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CController.php:483
+Stack trace:
+#0 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CController.php(270): CController->missingAction('profile')
+#1 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CWebApplication.php(282): CController->run('profile')
+#2 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/profile')
+#3 E:\XAMPP\htdocs\organiser\framework\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 E:\XAMPP\htdocs\organiser\www\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/site/profile
+HTTP_REFERER=http://organiser.local/site/new_task
+---
+2015/06/05 11:33:38 [error] [php] Undefined index: User (E:\XAMPP\htdocs\organiser\www\protected\controllers\UserController.php:89)
+Stack trace:
+#0 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CController.php(286): UserController->runAction()
+#1 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CController.php(265): UserController->runActionWithFilters()
+#2 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CWebApplication.php(282): UserController->run()
+#3 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 E:\XAMPP\htdocs\organiser\framework\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#5 E:\XAMPP\htdocs\organiser\www\index.php(13): CWebApplication->run()
+REQUEST_URI=/user/user_edit
+in E:\XAMPP\htdocs\organiser\www\protected\controllers\UserController.php (89)
+in E:\XAMPP\htdocs\organiser\www\index.php (13)
+2015/06/05 11:57:43 [error] [php] strtr() expects parameter 1 to be string, array given (E:\XAMPP\htdocs\organiser\framework\yii\framework\zii\widgets\CMenu.php:222)
+Stack trace:
+#0 E:\XAMPP\htdocs\organiser\framework\yii\framework\zii\widgets\CMenu.php(169): CMenu->renderMenu()
+#1 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CBaseController.php(181): CMenu->run()
+#2 E:\XAMPP\htdocs\organiser\www\protected\views\layouts\main.php(50): SiteController->widget()
+#3 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CBaseController.php(126): require()
+#4 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CBaseController.php(95): SiteController->renderInternal()
+#5 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\widgets\CContentDecorator.php(76): SiteController->renderFile()
+#6 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\widgets\CContentDecorator.php(54): CContentDecorator->decorate()
+#7 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\widgets\COutputProcessor.php(44): CContentDecorator->processOutput()
+#8 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CBaseController.php(214): CContentDecorator->run()
+#9 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CBaseController.php(308): SiteController->endWidget()
+#10 E:\XAMPP\htdocs\organiser\www\protected\views\layouts\column1.php(6): SiteController->endContent()
+#11 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CBaseController.php(126): require()
+#12 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CBaseController.php(95): SiteController->renderInternal()
+#13 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CController.php(784): SiteController->renderFile()
+#14 E:\XAMPP\htdocs\organiser\www\protected\controllers\SiteController.php(52): SiteController->render()
+#15 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#16 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#17 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CController.php(286): SiteController->runAction()
+#18 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#19 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CWebApplication.php(282): SiteController->run()
+#20 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#21 E:\XAMPP\htdocs\organiser\framework\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#22 E:\XAMPP\htdocs\organiser\www\index.php(13): CWebApplication->run()
+REQUEST_URI=/
+in E:\XAMPP\htdocs\organiser\www\protected\views\layouts\main.php (50)
+in E:\XAMPP\htdocs\organiser\www\protected\views\layouts\column1.php (6)
+in E:\XAMPP\htdocs\organiser\www\protected\controllers\SiteController.php (52)
+2015/06/05 11:58:03 [error] [php] strtr() expects parameter 1 to be string, array given (E:\XAMPP\htdocs\organiser\framework\yii\framework\zii\widgets\CMenu.php:222)
+Stack trace:
+#0 E:\XAMPP\htdocs\organiser\framework\yii\framework\zii\widgets\CMenu.php(169): CMenu->renderMenu()
+#1 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CBaseController.php(181): CMenu->run()
+#2 E:\XAMPP\htdocs\organiser\www\protected\views\layouts\main.php(50): SiteController->widget()
+#3 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CBaseController.php(126): require()
+#4 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CBaseController.php(95): SiteController->renderInternal()
+#5 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\widgets\CContentDecorator.php(76): SiteController->renderFile()
+#6 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\widgets\CContentDecorator.php(54): CContentDecorator->decorate()
+#7 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\widgets\COutputProcessor.php(44): CContentDecorator->processOutput()
+#8 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CBaseController.php(214): CContentDecorator->run()
+#9 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CBaseController.php(308): SiteController->endWidget()
+#10 E:\XAMPP\htdocs\organiser\www\protected\views\layouts\column1.php(6): SiteController->endContent()
+#11 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CBaseController.php(126): require()
+#12 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CBaseController.php(95): SiteController->renderInternal()
+#13 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CController.php(784): SiteController->renderFile()
+#14 E:\XAMPP\htdocs\organiser\www\protected\controllers\SiteController.php(160): SiteController->render()
+#15 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionNew_task()
+#16 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#17 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CController.php(286): SiteController->runAction()
+#18 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#19 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CWebApplication.php(282): SiteController->run()
+#20 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#21 E:\XAMPP\htdocs\organiser\framework\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#22 E:\XAMPP\htdocs\organiser\www\index.php(13): CWebApplication->run()
+REQUEST_URI=/site/new_task
+in E:\XAMPP\htdocs\organiser\www\protected\views\layouts\main.php (50)
+in E:\XAMPP\htdocs\organiser\www\protected\views\layouts\column1.php (6)
+in E:\XAMPP\htdocs\organiser\www\protected\controllers\SiteController.php (160)
+2015/06/05 12:10:52 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "profile".' in E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CController.php:483
+Stack trace:
+#0 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CController.php(270): CController->missingAction('profile')
+#1 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CWebApplication.php(282): CController->run('profile')
+#2 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/profile')
+#3 E:\XAMPP\htdocs\organiser\framework\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 E:\XAMPP\htdocs\organiser\www\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/site/profile
+HTTP_REFERER=http://organiser.local/
+---
+2015/06/05 12:11:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "profile".' in E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CController.php:483
+Stack trace:
+#0 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CController.php(270): CController->missingAction('profile')
+#1 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CWebApplication.php(282): CController->run('profile')
+#2 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/profile')
+#3 E:\XAMPP\htdocs\organiser\framework\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 E:\XAMPP\htdocs\organiser\www\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/site/profile
+HTTP_REFERER=http://organiser.local/
+---
+2015/06/05 12:12:31 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "profile".' in E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CController.php:483
+Stack trace:
+#0 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CController.php(270): CController->missingAction('profile')
+#1 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CWebApplication.php(282): CController->run('profile')
+#2 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/profile')
+#3 E:\XAMPP\htdocs\organiser\framework\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 E:\XAMPP\htdocs\organiser\www\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/site/profile
+HTTP_REFERER=http://organiser.local/site/chat
+---
+2015/06/05 12:13:36 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "profile".' in E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CController.php:483
+Stack trace:
+#0 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CController.php(270): CController->missingAction('profile')
+#1 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CWebApplication.php(282): CController->run('profile')
+#2 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/profile')
+#3 E:\XAMPP\htdocs\organiser\framework\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 E:\XAMPP\htdocs\organiser\www\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/site/profile
+HTTP_REFERER=http://organiser.local/site/chat
+---
+2015/06/05 12:13:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "profile".' in E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CController.php:483
+Stack trace:
+#0 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CController.php(270): CController->missingAction('profile')
+#1 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CWebApplication.php(282): CController->run('profile')
+#2 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/profile')
+#3 E:\XAMPP\htdocs\organiser\framework\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 E:\XAMPP\htdocs\organiser\www\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/site/profile
+HTTP_REFERER=http://organiser.local/user/user_edit
+---
