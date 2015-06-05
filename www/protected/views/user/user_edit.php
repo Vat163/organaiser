@@ -88,7 +88,7 @@
 
 <?=CHtml::form(); ?>
 Удалить организацию (введите ваш Логин и Email)<br>
-<?php if(isset($error_del)){echo $error_del;} ?>
+<?php if(isset($error_del)){echo "<div class='bg-danger text-center'><i class='fa fa-exclamation-triangle'></i>$error_del</div>";} ?>
     <table id="form4" border="0" width="400" cellpadding="10" cellspacing="10">
         <tr>
             <!-- Выводим поле для логина !-->

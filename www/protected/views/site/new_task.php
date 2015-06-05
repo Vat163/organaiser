@@ -1,3 +1,10 @@
+<?php
+    $this->pageTitle=Yii::app()->name . ' - new_task';
+    $this->breadcrumbs=array(
+	   'Создать задачу',
+    );
+    $current_user = User::model()->findByPk(Yii::app()->user->id);
+?>
 <form class="form-group" action="/site/new_task" method="post">
 <!--ошибки валидации !-->
 <?=CHtml::errorSummary($form); ?><br>

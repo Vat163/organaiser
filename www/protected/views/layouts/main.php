@@ -38,7 +38,7 @@
                             array('label'=>'О сайте', 'url'=>array('/site/page', 'view'=>'about'), 'visible'=>Yii::app()->user->isGuest),
                             // Навигация для зарегистрированного пользователя
                             array('label'=>'Создать задачу', 'url'=>array('/site/new_task'), 'visible'=>!Yii::app()->user->isGuest),
-                            array('label'=>'Редактировать профиль', 'url'=>array('/site/profile'), 'visible'=>!Yii::app()->user->isGuest), 
+                            array('label'=>'Редактировать профиль', 'url'=>array('/user/profile'), 'visible'=>!Yii::app()->user->isGuest), 
                             // Для админа
                             array('label'=>'Редактировать организацию', 'url'=>array('/user/user_edit'), 'visible'=>!Yii::app()->user->isGuest && $user->admin==1),
                             array('label'=>'Учет времени сотрудников', 'url'=>array('/site/organisation_info'), 'visible'=>!Yii::app()->user->isGuest && $user->admin==1), 

@@ -114,5 +114,66 @@ class UserController extends Controller
                 ));    
             }
         }
-    } 
+    }
+    
+    public function actionProfile(){
+        
+        $user = new User();
+        
+        // Проверяем гость ли пользователь (если да - пересылаем его на страницу входа)
+        if (Yii::app()->user->isGuest) {
+             $this->redirect('/site/login');
+        } else {
+            $current_user = User::model()->findByPk(Yii::app()->user->id);
+            $user_org = $current_user->organisation_id;
+            // Проверка кнопок
+            if(isset($_POST['update_login'])){
+                $user = User::model()->findByPk(Yii::app()->user->id);
+                $user->attributes = $user;
+                $user->username = $_POST['User']['username'];
+                if($user->validate()){
+                    $user->save();
+                    $this->render('profile', array(
+                        'form' => new User(),
+                    ));
+                } else {
+                    $this->render('profile', array(
+                        'form' => $user,
+                    ));
+                }
+            }elseif (isset($_POST['update_password'])){
+                $hash = User::model()->hashPassword($_POST['old_password']);
+                $user = User::model()->findByPk(Yii::app()->user->id);
+                if ($hash == $user->password){
+                    $user->password = $_POST['password'];
+                    $user->save();
+                    $this->render('profile', array(
+                            'form' => new User(),
+                    ));
+                } else {
+                    $wrong_pass = 'Неверно указан старый пароль';
+                    $this->render('profile', array(
+                            'form' => new User(),
+                            'wrong_pass' => $wrong_pass,
+                    ));
+                }
+            } elseif (isset($_POST['update_email'])){
+                $user->email = $_POST['email'];
+                $user->save();
+                $this->render('profile', array(
+                        'form' => new User(),
+                ));
+            }elseif(isset($_POST['update_profile'])){
+                $user->profile = $_POST['profile'];
+                $user->save();
+                $this->render('profile', array(
+                    'form' => $user,
+                ));
+            } else {
+                $this->render('profile', array(
+                        'form' => new User(),
+                    ));
+            }
+        }
+    }
 }

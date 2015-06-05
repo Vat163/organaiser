@@ -21,11 +21,6 @@
  */
 class User extends CActiveRecord
 {
-    const STATUS_USER=0;
-	const STATUS_ADMIN=1;
-    
-     // для капчи
-    public $verifyCode;
     
     /**
 	 * @return string the associated database table name

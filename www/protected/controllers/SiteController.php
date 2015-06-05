@@ -136,7 +136,7 @@ class SiteController extends Controller
                 // Заполняем $records данными которые пришли с формы
                 $records->attributes = $_POST['Records'];
                 
-                     // В validate передаем название сценария
+                     // validate records
                      if($records->validate()) {
                         // Если валидация прошла успешно, записываем все в бд
                         $records->user_id=Yii::app()->user->id;
@@ -208,35 +208,7 @@ class SiteController extends Controller
             }
         }
     }
-    public function actionProfile(){
-        
-        $user_edit = new User();
-        
-        // Проверяем гость ли пользователь (если да - пересылаем его на страницу входа)
-        if (Yii::app()->user->isGuest) {
-             $this->redirect('/site/login');
-        } else {
-            // Проверка кнопок
-            if(isset($_POST['new_user'])){
-                // Заполняем $user данными которые пришли с формы
-                $user = new User;
-                $user->attributes = $_POST['User'];
-                if($user->validate()) {
-                    $user_row = User::model()->findByPk(Yii::app()->user->id);
-                    $org = $user_row->organisation_id;
-                    $user->organisation_id = $org;
-                    $user->save();
-                    $this->render('user_edit', array(
-                        'form' => $user_edit,
-                    ));
-                } else {
-                    $this->render('user_edit', array(
-                        'form' => $user,
-                    ));
-                }
-        
-        
-    }
+
     public function actionChat(){
         $chat = new Chat;
         
