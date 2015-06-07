@@ -7,20 +7,10 @@
     margin-left: -5px;
 }
 .title {
-    font-size: 26px;
-    font-weight: 700;
-    color: #277EC4;
-    padding: 10px 0;
-    text-align: center;
-    margin: auto;
-    margin-bottom: 20px;
-    border-bottom: 1px #eaebeb solid;
-}
-#reg_content{
-    text-align: center;
+    padding-bottom: 16px;
 }
 .endline{
-    border-bottom: 1px #DDD solid;
+    border-bottom: 1px #337ab7 solid;
 }
 #button{
     margin: 10px 0;

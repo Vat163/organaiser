@@ -7228,3 +7228,57 @@ Stack trace:
 REQUEST_URI=/user/user_edit
 in E:\XAMPP\htdocs\organiser\www\protected\controllers\UserController.php (89)
 in E:\XAMPP\htdocs\organiser\www\index.php (13)
+2015/06/06 20:40:59 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 E:\XAMPP\htdocs\organiser\framework\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 E:\XAMPP\htdocs\organiser\www\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+HTTP_REFERER=http://organiser.local/
+---
+2015/06/06 20:41:00 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 E:\XAMPP\htdocs\organiser\framework\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 E:\XAMPP\htdocs\organiser\www\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+HTTP_REFERER=http://organiser.local/
+---
+2015/06/07 09:50:58 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 E:\XAMPP\htdocs\organiser\framework\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 E:\XAMPP\htdocs\organiser\www\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+HTTP_REFERER=http://organiser.local/user/registration
+---
+2015/06/07 09:50:58 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 E:\XAMPP\htdocs\organiser\framework\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 E:\XAMPP\htdocs\organiser\www\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+HTTP_REFERER=http://organiser.local/
+---
+2015/06/07 11:35:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "registration_ok".' in E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('registration_ok')
+#1 E:\XAMPP\htdocs\organiser\framework\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 E:\XAMPP\htdocs\organiser\www\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/registration_ok
+---
+2015/06/07 11:35:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "registration_ok".' in E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CController.php:483
+Stack trace:
+#0 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CController.php(270): CController->missingAction('registration_ok')
+#1 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CWebApplication.php(282): CController->run('registration_ok')
+#2 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/registrati...')
+#3 E:\XAMPP\htdocs\organiser\framework\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 E:\XAMPP\htdocs\organiser\www\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/site/registration_ok
+---

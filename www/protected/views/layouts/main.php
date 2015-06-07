@@ -28,7 +28,8 @@
                         <span class="icon-bar"></span>
                     </button>
                 </div>
-                <div class="collapse navbar-collapse" id="responsive-menu">
+                <div class="row">
+                <div class="collapse navbar-collapse col-sm-12" id="responsive-menu">
                     <?php $user = User::model()->findByPk(Yii::app()->user->id); ?>
                     <?php $this->widget('zii.widgets.CMenu',array(
                         'htmlOptions' => array('class' => 'nav navbar-nav'),
@@ -49,6 +50,7 @@
                             array('label'=>'Выйти ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
                         ),
                     )); ?>
+                </div>
                 </div>
             </div>
         </div>
