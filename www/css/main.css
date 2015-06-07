@@ -8,7 +8,6 @@ body
 	padding: 0;
     margin-bottom: 75px !important;
 	color: #555;
-	
 	background: #EFEFEF;
     
 }
@@ -21,21 +20,6 @@ body
 .logo{
     padding-left: 20px;
 }
-.header
-{
-    top: 0;
-    width: 100%;
-    padding: 15px 0;
-    border-bottom: 1px #DDD solid;
-    margin-bottom: 2px;
-    background-color: #F8F8F8;
-}
-.header .header-content{
-    width: 100%;
-    text-align: center;
-    padding: 0 20px;
-    float: right;
-}
 
 .errorList{
     width: 290px;
@@ -43,8 +27,6 @@ body
     float: left;
     border-radius: 5px;
 }
-
-
 
 #sidebar
 {
@@ -105,37 +87,6 @@ body
     border-top-right-radius: 0;
 }
 /* ----------------------------------------*/
-
-#mainmenu
-{
-	
-}
-
-#mainmenu ul
-{
-	margin:0px;
-}
-
-#mainmenu ul li
-{
-	display: inline;
-}
-
-#mainmenu ul li a
-{
-	background-color:transparent;
-	font-size:12px;
-	font-weight:bold;
-	text-decoration:none;
-    padding: 3px 5px 2px 5px;
-}
-
-#mainmenu ul li a:hover, #mainmenu ul li.active a
-{
-	color: black;
-	background-color:#00FF00;
-	text-decoration:none;
-}
 
 div.flash-error, div.flash-notice, div.flash-success
 {
