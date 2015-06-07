@@ -7282,3 +7282,26 @@ Stack trace:
 #5 {main}
 REQUEST_URI=/site/registration_ok
 ---
+2015/06/07 22:50:07 [error] [php] htmlspecialchars() expects parameter 1 to be string, array given (E:\XAMPP\htdocs\organiser\framework\yii\framework\web\helpers\CHtml.php:108)
+Stack trace:
+#0 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\helpers\CHtml.php(163): renderAttributes()
+#1 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\helpers\CHtml.php(595): tag()
+#2 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\helpers\CHtml.php(1492): label()
+#3 E:\XAMPP\htdocs\organiser\www\protected\views\user\profile.php(23): activeLabel()
+#4 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CBaseController.php(126): require()
+#5 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CBaseController.php(95): UserController->renderInternal()
+#6 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CController.php(869): UserController->renderFile()
+#7 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CController.php(782): UserController->renderPartial()
+#8 E:\XAMPP\htdocs\organiser\www\protected\controllers\UserController.php(184): UserController->render()
+#9 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\actions\CInlineAction.php(49): UserController->actionProfile()
+#10 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#11 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CController.php(286): UserController->runAction()
+#12 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CController.php(265): UserController->runActionWithFilters()
+#13 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CWebApplication.php(282): UserController->run()
+#14 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#15 E:\XAMPP\htdocs\organiser\framework\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#16 E:\XAMPP\htdocs\organiser\www\index.php(13): CWebApplication->run()
+REQUEST_URI=/user/profile
+in E:\XAMPP\htdocs\organiser\www\protected\views\user\profile.php (23)
+in E:\XAMPP\htdocs\organiser\www\protected\controllers\UserController.php (184)
+in E:\XAMPP\htdocs\organiser\www\index.php (13)
