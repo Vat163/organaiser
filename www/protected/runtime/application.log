@@ -7364,3 +7364,101 @@ in E:\XAMPP\htdocs\organiser\www\index.php (13)
 2015/06/08 19:09:24 [warning] [application] Failed to set unsafe attribute "user_id" of "Records".
 in E:\XAMPP\htdocs\organiser\www\protected\controllers\SiteController.php (137)
 in E:\XAMPP\htdocs\organiser\www\index.php (13)
+2015/06/09 03:05:36 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 E:\XAMPP\htdocs\organiser\framework\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 E:\XAMPP\htdocs\organiser\www\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+HTTP_REFERER=http://organiser.local/
+---
+2015/06/09 03:47:30 [error] [php] Undefined index: username (E:\XAMPP\htdocs\organiser\www\protected\controllers\UserController.php:95)
+Stack trace:
+#0 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CController.php(286): UserController->runAction()
+#1 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CController.php(265): UserController->runActionWithFilters()
+#2 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CWebApplication.php(282): UserController->run()
+#3 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 E:\XAMPP\htdocs\organiser\framework\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#5 E:\XAMPP\htdocs\organiser\www\index.php(13): CWebApplication->run()
+REQUEST_URI=/user/user_edit
+in E:\XAMPP\htdocs\organiser\www\protected\controllers\UserController.php (95)
+in E:\XAMPP\htdocs\organiser\www\index.php (13)
+2015/06/09 03:48:09 [error] [php] Undefined index: username (E:\XAMPP\htdocs\organiser\www\protected\controllers\UserController.php:95)
+Stack trace:
+#0 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CController.php(286): UserController->runAction()
+#1 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CController.php(265): UserController->runActionWithFilters()
+#2 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CWebApplication.php(282): UserController->run()
+#3 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 E:\XAMPP\htdocs\organiser\framework\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#5 E:\XAMPP\htdocs\organiser\www\index.php(13): CWebApplication->run()
+REQUEST_URI=/user/user_edit
+in E:\XAMPP\htdocs\organiser\www\protected\controllers\UserController.php (95)
+in E:\XAMPP\htdocs\organiser\www\index.php (13)
+2015/06/09 03:49:15 [error] [php] Undefined index: username (E:\XAMPP\htdocs\organiser\www\protected\controllers\UserController.php:95)
+Stack trace:
+#0 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CController.php(286): UserController->runAction()
+#1 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CController.php(265): UserController->runActionWithFilters()
+#2 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CWebApplication.php(282): UserController->run()
+#3 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 E:\XAMPP\htdocs\organiser\framework\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#5 E:\XAMPP\htdocs\organiser\www\index.php(13): CWebApplication->run()
+REQUEST_URI=/user/user_edit
+in E:\XAMPP\htdocs\organiser\www\protected\controllers\UserController.php (95)
+in E:\XAMPP\htdocs\organiser\www\index.php (13)
+2015/06/09 03:51:35 [error] [php] Undefined index: username (E:\XAMPP\htdocs\organiser\www\protected\controllers\UserController.php:95)
+Stack trace:
+#0 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CController.php(286): UserController->runAction()
+#1 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CController.php(265): UserController->runActionWithFilters()
+#2 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CWebApplication.php(282): UserController->run()
+#3 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 E:\XAMPP\htdocs\organiser\framework\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#5 E:\XAMPP\htdocs\organiser\www\index.php(13): CWebApplication->run()
+REQUEST_URI=/user/user_edit
+in E:\XAMPP\htdocs\organiser\www\protected\controllers\UserController.php (95)
+in E:\XAMPP\htdocs\organiser\www\index.php (13)
+2015/06/09 03:52:28 [error] [php] Undefined index: username (E:\XAMPP\htdocs\organiser\www\protected\controllers\UserController.php:95)
+Stack trace:
+#0 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CController.php(286): UserController->runAction()
+#1 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CController.php(265): UserController->runActionWithFilters()
+#2 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CWebApplication.php(282): UserController->run()
+#3 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 E:\XAMPP\htdocs\organiser\framework\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#5 E:\XAMPP\htdocs\organiser\www\index.php(13): CWebApplication->run()
+REQUEST_URI=/user/user_edit
+in E:\XAMPP\htdocs\organiser\www\protected\controllers\UserController.php (95)
+in E:\XAMPP\htdocs\organiser\www\index.php (13)
+2015/06/09 06:44:34 [error] [php] Object of class User could not be converted to string (E:\XAMPP\htdocs\organiser\www\protected\views\site\chat.php:22)
+Stack trace:
+#0 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CController.php(869): SiteController->renderFile()
+#1 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CController.php(782): SiteController->renderPartial()
+#2 E:\XAMPP\htdocs\organiser\www\protected\controllers\SiteController.php(256): SiteController->render()
+#3 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionChat()
+#4 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CController.php(286): SiteController->runAction()
+#6 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#7 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CWebApplication.php(282): SiteController->run()
+#8 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 E:\XAMPP\htdocs\organiser\framework\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 E:\XAMPP\htdocs\organiser\www\index.php(13): CWebApplication->run()
+REQUEST_URI=/site/chat
+in E:\XAMPP\htdocs\organiser\www\protected\views\site\chat.php (22)
+in E:\XAMPP\htdocs\organiser\www\protected\controllers\SiteController.php (256)
+in E:\XAMPP\htdocs\organiser\www\index.php (13)
+2015/06/09 07:11:29 [error] [php] Object of class User could not be converted to string (E:\XAMPP\htdocs\organiser\www\protected\views\site\chat.php:19)
+Stack trace:
+#0 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CController.php(869): SiteController->renderFile()
+#1 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CController.php(782): SiteController->renderPartial()
+#2 E:\XAMPP\htdocs\organiser\www\protected\controllers\SiteController.php(256): SiteController->render()
+#3 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionChat()
+#4 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CController.php(286): SiteController->runAction()
+#6 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#7 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CWebApplication.php(282): SiteController->run()
+#8 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 E:\XAMPP\htdocs\organiser\framework\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 E:\XAMPP\htdocs\organiser\www\index.php(13): CWebApplication->run()
+REQUEST_URI=/site/chat
+in E:\XAMPP\htdocs\organiser\www\protected\views\site\chat.php (19)
+in E:\XAMPP\htdocs\organiser\www\protected\controllers\SiteController.php (256)
+in E:\XAMPP\htdocs\organiser\www\index.php (13)

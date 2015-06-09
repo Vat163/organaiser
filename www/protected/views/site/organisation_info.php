@@ -4,24 +4,49 @@ $this->pageTitle=Yii::app()->name . ' - Учет времени сотрудни
 $this->breadcrumbs=array(
 	'Учет времени сотрудников',
 );
-foreach($user as $usr) {
-    
-    echo 'Имя сотрудника: '.$usr->username.''; 
-    echo '<br>';
-    if(count($all_records[$usr->id])==0){echo 'У данного пользователя пока нет задач';}
+?>
+<?php
+$i=1;
+foreach ($user as $usr) {
+echo'
+<div class="panel panel-default">
+    <div class="table-responsive">
+        <div class="panel-heading bg-info text-center">
+            <i class="fa fa-info-circle"></i> 
+            <strong>
+';
+                    echo 'Имя сотрудника: '.$usr->username; echo '<br>';
+                    if(count($all_records[$usr->id])==0) {
+                        echo 'У данного пользователя пока нет задач';
+                    }
+echo '
+            </strong>
+        </div>
+        <table class="table table-striped">
+            <tr>
+                <th>#</th>
+                <th>Заголовок</th>
+                <th>Контент</th>
+                <th>Дата и время начала</th>
+                <th>Дата и время окончания</th>
+            </tr>
+';
     for($i=0; $i < count($all_records[$usr->id]); $i++){
         $data = $all_records[$usr->id][$i];
-        echo 'Заголовок: '.$data->title.'';
-        echo '<br>';
-        echo 'Содержание: '.$data->content.'';
-        echo '<br>';
-        echo 'Дата начала: '.$data->start_date.'';
-        echo '<br>';
-        echo 'Дата окончания: '.$data->finish_date.'';
-        echo '<br>';
-        echo '<br>';
-    } 
-    
-    
+        echo "<tr><td>";
+        echo $i++;
+        echo "          </td>
+                        <td>$data->title</td>
+                        <td>$data->content</td>
+                        <td>$data->start_date</td>
+                        <td>$data->finish_date</td>
+                    </tr>
+        ";
+    };
+echo '
+        </table>
+    </div>
+</div>
+';
 }
 ?>

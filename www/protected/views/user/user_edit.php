@@ -9,105 +9,131 @@
     $user_list = CHtml::listData(User::model()->findAll('organisation_id=:usr_org', array(':usr_org' => $user_org)), 'id', 'username');
     unset($user_list[Yii::app()->user->id]);
 ?>
-<?=CHtml::form(); ?>
-    <!-- То самое место где будут выводиться ошибки
-     если они будут при валидации !-->
+<div class="row">
+    <?=CHtml::form(); ?>
+        <div class="panel panel-success">
 
-<div class="errorList bg-danger"><?=CHtml::errorSummary($form); ?></div>
-<div class="clearfix"></div>
-Добавить пользователя
-    <table id="form2" border="0" width="400" cellpadding="10" cellspacing="10">
-        <tr>
-            <!-- Выводим поле для логина !-->
-            <td width="150"><?=CHtml::activeLabel($form, 'username', array('label' => 'Логин')); ?></td>
-            <td><?=CHtml::activeTextField($form, 'username') ?></td>
-        </tr>
-        <tr>
-            <!-- Выводим поле для пароля !-->
-            <td><?=CHtml::activeLabel($form, 'password', array('label' => 'Пароль')); ?></td>
-            <td><?=CHtml::activePasswordField($form, 'password') ?></td>
-        </tr>
-        <tr>
-            <!-- Выводим поле для email !-->
-            <td width="150"><?=CHtml::activeLabel($form, 'email'); ?></td>
-            <td><?=CHtml::activeEmailField($form, 'email') ?></td>
-        </tr>
-        <tr>
-            <!-- Выводим поле для first_name !-->
-            <td width="150"><?=CHtml::activeLabel($form, 'first_name', array('label' => 'Имя')); ?></td>
-            <td><?=CHtml::activeTextField($form, 'first_name') ?></td>
-        </tr>
-        <tr>
-            <!-- Выводим поле для last_name !-->
-            <td width="150"><?=CHtml::activeLabel($form, 'last_name', array('label' => 'Фамилия')); ?></td>
-            <td><?=CHtml::activeTextField($form, 'last_name') ?></td>
-        </tr>
-        <tr>
-            <!-- Выводим поле для profile !-->
-            <td width="150"><?=CHtml::activeLabel($form, 'profile', array('label' => 'Должность')); ?></td>
-            <td><?=CHtml::activeTextField($form, 'profile') ?></td>
-        </tr>
-        <tr>
-            <!-- Выводим поле админ !-->
-            <td width="150"><?=CHtml::activeLabel($form, 'admin', array('label' => 'Админ')); ?></td>
-            <td><?=CHtml::activeDropDownList($form, 'admin', array(
-                '1'=>'Да',
-                '0'=>'Нет',
-            )) ?></td>
-        </tr>
+            <div class="panel-heading text-center profile_title">
+                <h3 class="panel-title"><strong>Добавить пользователя</strong></h3>
+                
+            </div>
 
-        <tr>
-            <td></td>
-            <!-- Кнопка "Добавить пользователя" !-->
-             <td><?=CHtml::submitButton('Добавить пользователя', array('class' => "btn btn-success", 'name' => 'new_user')); ?></td>
-        </tr>
-    </table>
-<?=CHtml::endForm(); ?>
-<?=CHtml::form(); ?>
-<?php 
-    if (empty($user_list)){ 
-        $user_empty='У вас пока нету сотрудников';
-    } else {
-        $user_empty='';
-    }
-?>
-Удалить пользователя
-<p class="bg-info text-center"><i class="fa fa-info-circle"></i> <strong><?= $user_empty; ?></strong></p>
-    <table id="form3" border="0" width="400" cellpadding="10" cellspacing="10">
-        <tr>
-            <!-- Выводим поле для выбора логина !-->
-            <td width="150"><?=CHtml::activeLabel($form, 'username', array('label' => 'Логин')); ?></td>
-            <td><?=CHtml::activeDropDownList($form, 'username', $user_list, array('class' => 'users')) ?></td>
-        </tr>
-        <tr>
-            <td></td>
-            <!-- Кнопка "Удалить пользователя" !-->
-             <td><?=CHtml::submitButton('Удалить пользователя', array('class' => 'user_del btn btn-warning', 'name' => 'del_user')); ?></td>
-        </tr>
-    </table>
-<?=CHtml::endForm(); ?>
+                <div class="errorList bg-danger"><?=CHtml::errorSummary($form); ?></div>
+            <div class="form-horizontal">
 
-<?=CHtml::form(); ?>
-Удалить организацию (введите ваш Логин и Email)<br>
-<?php if(isset($error_del)){echo "<div class='bg-danger text-center'><i class='fa fa-exclamation-triangle'></i>$error_del</div>";} ?>
-    <table id="form4" border="0" width="400" cellpadding="10" cellspacing="10">
-        <tr>
-            <!-- Выводим поле для логина !-->
-            <td width="150"><?=CHtml::activeLabel($form, 'username', array('label' => 'Логин')); ?></td>
-            <td><?=CHtml::activeTextField($form, 'username') ?></td>
-        </tr>
-        <tr>
-            <!-- Выводим поле для пароля !-->
-            <td><?=CHtml::activeLabel($form, 'email'); ?></td>
-            <td><?=CHtml::activeEmailField($form, 'email') ?></td>
-        </tr>
+                <div class="form-group">
+                    <?=CHtml::activeLabel($form, 'username', array('label' => 'Логин:', 'class' => 'col-sm-2 control-label')); ?>
+                    <div class="col-sm-9">
+                        <?=CHtml::activeTextField($form, 'username', array('class' => 'form-control',)) ?>
+                    </div>
+                </div>
 
-        <tr>
-            <td></td>
-            <!-- Кнопка "Удалить организацию" !-->
-             <td><?=CHtml::submitButton('Удалить организацию', array('class' => "btn btn-danger", 'name' => 'del_organisation')); ?></td>
-        </tr>
-    </table>
+               <div class="form-group">
+                    <?=CHtml::activeLabel($form, 'password', array('label' => 'Пароль:', 'class' => 'col-sm-2 control-label')); ?>
+                    <div class="col-sm-9">
+                        <?=CHtml::activePasswordField($form, 'password', array('class' => 'form-control',)) ?>
+                    </div>
+                </div>
+               
+                <div class="form-group">
+                    <?=CHtml::activeLabel($form, 'email', array('label' => 'Email:', 'class' => 'col-sm-2 control-label')); ?>
+                    <div class="col-sm-9">
+                        <?=CHtml::activeEmailField($form, 'email', array('class' => 'form-control')) ?>
+                    </div>
+                </div>
 
-<!-- Закрываем форму !-->
-<?=CHtml::endForm(); ?>
+                <div class="form-group">
+                    <?=CHtml::activeLabel($form, 'first_name', array('label' => 'Имя:', 'class' => 'col-sm-2 control-label')); ?>
+                    <div class="col-sm-9">
+                        <?=CHtml::activeTextField($form, 'first_name', array('class' => 'form-control',)) ?>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <?=CHtml::activeLabel($form, 'last_name', array('label' => 'Фамилия:', 'class' => 'col-sm-2 control-label')); ?>
+                    <div class="col-sm-9">
+                        <?=CHtml::activeTextField($form, 'last_name', array('class' => 'form-control',)) ?>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <?=CHtml::activeLabel($form, 'profile', array('label' => 'Должность:', 'class' => 'col-sm-2 control-label')); ?>
+                    <div class="col-sm-9">
+                        <?=CHtml::activeTextField($form, 'profile', array('class' => 'form-control',)) ?>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <?=CHtml::activeLabel($form, 'admin', array('label' => 'Админ', 'class' => 'col-sm-2 control-label')); ?>
+                    <div class="col-sm-9">
+                        <?=CHtml::activeDropDownList($form, 'admin', array(
+                            '1'=>'Да',
+                            '0'=>'Нет',
+                        ), array('class' => 'form-control',)) ?>
+                    </div>
+                </div>
+
+                <div class="text-center">
+                    <?=CHtml::submitButton('Добавить пользователя', array('class' => "btn btn-success profile_buttons", 'name' => 'new_user')); ?>
+                </div>
+            </div>
+    </div>
+    <?=CHtml::endForm(); ?>
+    
+    <?=CHtml::form(); ?>
+    <?php 
+        if (empty($user_list)){ 
+            $user_empty='У вас пока нету сотрудников';
+        } else {
+            $user_empty='';
+        }
+    ?>
+    <div class="panel panel-danger">
+
+        <div class="panel-heading text-center profile_title">
+            <h3 class="panel-title"><strong>Удалить пользователя</strong></h3>
+            <?php if (!empty($user_empty)){ echo '<p class="text-center"><i class="fa fa-info-circle"></i> <strong>'; echo "$user_empty"; echo'</strong></p>';} ?>
+        </div>
+
+        <div class="form-horizontal">
+            <div class="form-group">
+                <?=CHtml::activeLabel($form, 'username', array('label' => 'Логин:', 'class' => 'col-sm-2 control-label')); ?>
+                <div class="col-sm-9">
+                    <?=CHtml::activeDropDownList($form, 'username', $user_list, array('class' => 'form-control')) ?>
+                </div>
+            </div>
+            <div class="text-center">
+                <?=CHtml::submitButton('Удалить пользователя', array('class' => "btn btn-danger profile_buttons user_del", 'name' => 'del_user')); ?>
+            </div>
+        </div>
+    </div>
+    <?=CHtml::endForm(); ?>
+
+    <?=CHtml::form(); ?>
+    <div class="panel panel-danger">
+
+        <div class="panel-heading text-center profile_title">
+            <h3 class="panel-title"><strong>Удалить организацию</strong></h3>
+            <?php if(isset($error_del)){echo "<div class='bg-danger text-center'><i class='fa fa-exclamation-triangle'></i>$error_del</div>";} ?>
+        </div>
+
+        <div class="form-horizontal">
+            <div class="form-group">
+                <label class="col-sm-2 control-label" for="username">Логин:</label>
+                <div class="col-sm-9">
+                    <input class="form-control" name="User[username]" id="username" type="text" maxlength="64">
+                </div>
+            </div>
+            <div class="form-group">
+                <?=CHtml::activeLabel($form, 'email', array('label' => 'Email:', 'class' => 'col-sm-2 control-label')); ?>
+                <div class="col-sm-9">
+                    <?=CHtml::activeEmailField($form, 'email', array('class' => 'form-control')) ?>
+                </div>
+            </div>
+            <div class="text-center">
+                <?=CHtml::submitButton('Удалить организацию', array('class' => "btn btn-danger profile_buttons", 'name' => 'del_organisation')); ?>
+            </div>
+        </div>
+    </div>
+    <?=CHtml::endForm(); ?>
+</div>
