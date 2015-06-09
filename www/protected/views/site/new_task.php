@@ -1,9 +1,14 @@
 <?php
+    Yii::app()->clientScript->registerScriptFile('/js/new_task.js',CClientScript::POS_HEAD);
     $this->pageTitle=Yii::app()->name . ' - new_task';
     $this->breadcrumbs=array(
 	   'Создать задачу',
     );
     $current_user = User::model()->findByPk(Yii::app()->user->id);
+    $user_org = $current_user->organisation_id;    
+    $user_list = CHtml::listData(User::model()->findAll('organisation_id=:usr_org', array(':usr_org' => $user_org)), 'id', 'username');
+    
+    $admin_button = '<button type="button" id="toggle-button" class="btn btn-primary" name="to_user">Выбрать пользователя</button>';
 ?>
 <form class="form-group" action="/site/new_task" method="post">
 <!--ошибки валидации !-->
@@ -24,5 +29,10 @@
         <?=CHtml::activeLabel($form, 'content', array('label' => 'Содержание')); ?>
         <?=CHtml::activeTextArea($form, 'content', array('class' => 'form-control')) ?>
     </div>
+    <div id="toggle" class="form-group">
+        <?=CHtml::activeLabel($form, 'user_id', array('label' => 'Пользователь')); ?>
+        <?=CHtml::activeDropDownList($form, 'user_id', $user_list, array('class' => 'users form-control')) ?>
+    </div>
     <?=CHtml::submitButton('Отправить', array('class' => 'btn btn-default')); ?>
+    <?php if($current_user->admin==1){echo $admin_button;} ?>
 </form>

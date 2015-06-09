@@ -24,10 +24,29 @@ body
 .errorList{
     width: 290px;
     text-align: center;
-    float: left;
+    margin: auto;
     border-radius: 5px;
 }
 
+
+#chat{
+    overflow-y: scroll;
+    max-height: 500px;
+}
+#messages{
+    margin-bottom: 10px;
+}
+
+
+.profile_buttons {
+    margin-bottom: 12px !important;
+}
+.profile_title{
+    margin-bottom: 10px !important;
+}
+#toggle{
+    display: none;
+}
 #sidebar
 {
 	padding: 20px 20px 20px 0;

@@ -130,37 +130,59 @@ class SiteController extends Controller
         if (Yii::app()->user->isGuest) {
              $this->redirect('/site/login');
         } else {
-            // Если $_POST['Records'] не пустой массив - значит была отправлена форма
-            if (!empty($_POST['Records'])) {
-                
-                // Заполняем $records данными которые пришли с формы
-                $records->attributes = $_POST['Records'];
-                
-                     // validate records
-                     if($records->validate()) {
+            $user = User::model()->findByPk(Yii::app()->user->id);
+            
+            if ($user->admin==1) {
+                if (isset($_POST['Records'])){
+                    $records->attributes = $_POST['Records'];
+                    if($records->validate()) {
                         // Если валидация прошла успешно, записываем все в бд
-                        $records->user_id=Yii::app()->user->id;
+                        $records->user_id=$_POST['Records']['user_id'];
                         $records->save();
                         $this->redirect('view');
-                        
-                     } else {
+                    } else {
                         // Если введенные данные противоречат 
                         // правилам валидации (указаным в rules) тогда
                         // выводим форму и ошибки
-                        
                         $this->render('new_task', array(
                             'form' => $records,
                         ));
                     }
-             } else {
-                // Если $_POST['Records'] пустой массив - значит форму некто не отправлял.
-                // Значит пользователь просто вошел на страницу регистрации
-                // и мы должны показать ему форму.
-                 
-                $this->render('new_task', array('form' => $records));
+                }else{
+                    $this->render('new_task', array(
+                        'form' => $records, 
+                    ));
+                }
+            }
+            
+            if ($user->admin==0){
+                if (isset($_POST['Records'])) {
+                    // Заполняем $records данными которые пришли с формы
+                    $records->attributes = $_POST['Records'];
+
+                         // validate records
+                         if($records->validate()) {
+                            // Если валидация прошла успешно, записываем все в бд
+                            $records->user_id=Yii::app()->user->id;
+                            $records->save();
+                            $this->redirect('view');
+
+                         } else {
+                            // Если введенные данные противоречат 
+                            // правилам валидации (указаным в rules) тогда
+                            // выводим форму и ошибки
+
+                            $this->render('new_task', array(
+                                'form' => $records,
+                            ));
+                        }
+                } else {
+                    $this->render('new_task', array(
+                        'form' => $records,
+                    ));
+                }
             }
         }
-    
     }
     
     public function actionView(){
