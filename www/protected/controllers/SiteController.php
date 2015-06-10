@@ -42,13 +42,13 @@ class SiteController extends Controller
                  $this->redirect('/site/login');
             } else {
                 $records=Records::model()->findAll('user_id=:usr_id', array(':usr_id' => Yii::app()->user->id));
-                if (
-                       count($records)==0
-                   )
-                    {$empty = 'У вас пока нет задач';} else {$empty='';};
+                if (count($records)==0)
+                {
+                    $empty = 'У вас пока нет задач';
+                } else {$empty='';};
                 $this->render('view', array(
-                                'form' => $records,
-                                'empty' => $empty,
+                    'form' => $records,
+                    'empty' => $empty,
                 ));
             }
         }

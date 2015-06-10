@@ -116,72 +116,56 @@ class UserController extends Controller
         }
     }
     
-    public function actionProfile(){
-        
-        $user = new User();
-        
-        // Проверяем гость ли пользователь (если да - пересылаем его на страницу входа)
+    public function actionProfile()
+    {
         if (Yii::app()->user->isGuest) {
              $this->redirect('/site/login');
         } else {
             $user = User::model()->findByPk(Yii::app()->user->id);
-            $user->attributes = $user;
             // Проверка кнопок
             if(isset($_POST['update_login'])){
                 $user->username = $_POST['User']['username'];
                 if($user->validate()){
                     $user->save();
-                    $this->render('profile', array(
-                        'form' => new User(),
-                    ));
+                    $this->render('profile');
                 } else {
                     $this->render('profile', array(
-                        'form' => $user,
+                        'form_login' => $user,
                     ));
                 }
             }elseif (isset($_POST['update_password'])){
-                $hash = User::model()->hashPassword($_POST['old_password']);
-                if ($hash == $user->password){
-                    $user->password = $_POST['password'];
+        
+                if (CPasswordHelper::verifyPassword($_POST['old_password'],$user->password)){
+                    $user->password = CPasswordHelper::hashPassword($_POST['User']['password']);
                     if($user->validate()){
                         $user->save();
-                        $this->render('profile', array(
-                                'form' => new User(),
-                        ));
+                        $this->render('profile');
                     }
                 } else {
-                    $this->render('profile', array(
-                            'form' => $user,
-                    ));
+                    $this->render('profile');
                 }
             }elseif (isset($_POST['update_email'])){
-                $user->email = $_POST['email'];
+                $user->email = $_POST['User']['email'];
                 if($user->validate()){
                     $user->save();
-                    $this->render('profile', array(
-                            'form' => new User(),
-                    ));
+                    $this->render('profile');
                 } else {
                     $this->render('profile', array(
-                            'form' => $user,
+                            'form_email' => $user,
                     ));
                 }
             }elseif(isset($_POST['update_profile'])){
-                $user->profile = $_POST['profile'];
+                $user->profile = $_POST['User']['profile'];
                 if($user->validate()){
                     $user->save();
-                    $this->render('profile', array(
-                        'form' => new User(),
-                    ));
+                    $this->render('profile');
                 } else {
                     $this->render('profile', array(
-                        'form' => $user,
+                        'form_profile' => $user,
                     ));
                 }
             } else {
-                $this->render('profile', array(
-                        'form' => new User(),
-                ));
+                $this->render('profile');
             }
         }
     }

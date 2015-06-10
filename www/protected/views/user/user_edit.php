@@ -15,7 +15,6 @@
 
             <div class="panel-heading text-center profile_title">
                 <h3 class="panel-title"><strong>Добавить пользователя</strong></h3>
-                
             </div>
 
                 <div class="errorList bg-danger"><?=CHtml::errorSummary($form); ?></div>
@@ -99,7 +98,7 @@
             <div class="form-group">
                 <?=CHtml::activeLabel($form, 'username', array('label' => 'Логин:', 'class' => 'col-sm-2 control-label')); ?>
                 <div class="col-sm-9">
-                    <?=CHtml::activeDropDownList($form, 'username', $user_list, array('class' => 'form-control')) ?>
+                    <?=CHtml::activeDropDownList($form, 'username', $user_list, array('class' => 'form-control', 'id' => 'users')) ?>
                 </div>
             </div>
             <div class="text-center">

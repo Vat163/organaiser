@@ -6,7 +6,6 @@ $this->breadcrumbs=array(
 );
 ?>
 <?php
-$i=1;
 foreach ($user as $usr) {
 echo'
 <div class="panel panel-default">
@@ -31,10 +30,11 @@ echo '
                 <th>Дата и время окончания</th>
             </tr>
 ';
+    
     for($i=0; $i < count($all_records[$usr->id]); $i++){
         $data = $all_records[$usr->id][$i];
         echo "<tr><td>";
-        echo $i++;
+        echo $i+1;
         echo "          </td>
                         <td>$data->title</td>
                         <td>$data->content</td>

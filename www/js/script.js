@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    if(($("select[class=users] option").size())<1){
+    if(($("select[id=users] option").size())<1){
         $('.user_del').addClass('hidden'); 
     }
 });

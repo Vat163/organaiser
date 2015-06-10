@@ -34,20 +34,69 @@
                     <?php $this->widget('zii.widgets.CMenu',array(
                         'htmlOptions' => array('class' => 'nav navbar-nav'),
                         'items'=>array(
-                            array('label'=>'Home', 'url'=>array('/site/index')),
+                            array(
+                                'encodeLabel'=>false,'label'=>'<span class="fa fa-home"></span> Home', 'url'=>array('/site/index')),
                             // Навигация для гостя
-                            array('label'=>'О сайте', 'url'=>array('/site/page', 'view'=>'about'), 'visible'=>Yii::app()->user->isGuest),
+                            array(
+                                'encodeLabel'=>false,'label'=>'<span class="fa fa-bullhorn"></span> О сайте', 'url'=>array('/site/page', 'view'=>'about'), 'visible'=>Yii::app()->user->isGuest),
                             // Навигация для зарегистрированного пользователя
-                            array('label'=>'Создать задачу', 'url'=>array('/site/new_task'), 'visible'=>!Yii::app()->user->isGuest),
-                            array('label'=>'Редактировать профиль', 'url'=>array('/user/profile'), 'visible'=>!Yii::app()->user->isGuest), 
+                            array(
+                                'encodeLabel'=>false,'label'=>'<span class="fa fa-pencil-square-o"></span> Создать задачу', 'url'=>array('/site/new_task'), 'visible'=>!Yii::app()->user->isGuest),
+                            array(
+                                'encodeLabel'=>false,'label'=>'<span class="fa fa-comments-o"></span> Чат', 'url'=>array('/site/chat'), 'visible'=>!Yii::app()->user->isGuest), 
+                            
+                               
+                            
                             // Для админа
-                            array('label'=>'Редактировать организацию', 'url'=>array('/user/user_edit'), 'visible'=>!Yii::app()->user->isGuest && $user->admin==1),
-                            array('label'=>'Учет времени сотрудников', 'url'=>array('/site/organisation_info'), 'visible'=>!Yii::app()->user->isGuest && $user->admin==1), 
-                            array('label'=>'Чат', 'url'=>array('/site/chat'), 'visible'=>!Yii::app()->user->isGuest), 
+                            
+                            array(
+                                'label'=>'<span class="fa fa-trophy"></span> Управление <b class="caret"></b>',
+                                'encodeLabel'=>false,
+                                'url'=>'', 
+                                'visible'=>!Yii::app()->user->isGuest && $user->admin==1,
+                                'submenuOptions'=>array('class'=>'dropdown-menu'),
+                                'linkOptions'=>array(
+                                    'class'=>'dropdown-toggle', 
+                                    'data-toggle'=>'dropdown',
+                                ),
+                                'items'=>array(
+                                    array('label'=>'Редактировать организацию', 'url'=>array('/user/user_edit'), 'visible'=>!Yii::app()->user->isGuest && $user->admin==1),
+                                    array('label'=>'Учет времени сотрудников', 'url'=>array('/site/organisation_info'), 'visible'=>!Yii::app()->user->isGuest && $user->admin==1), 
+                                )
+                            ), 
+                         
+                            
+                            
+                            array(
+                                'label'=>'<span class="fa fa-user"></span> '.Yii::app()->user->name .' <b class="caret"></b>',
+                                'encodeLabel'=>false,
+                                'url'=>'', 
+                                'visible'=>!Yii::app()->user->isGuest,
+                                'submenuOptions'=>array('class'=>'dropdown-menu'),
+                                'linkOptions'=>array(
+                                    'class'=>'dropdown-toggle', 
+                                    'data-toggle'=>'dropdown',
+                                ),
+                                'items'=>array(
+                                    array('label'=>'Редактировать профиль', 'url'=>array('/user/profile'), 'visible'=>!Yii::app()->user->isGuest), 
+                                    array('label'=>'Выйти', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest),
+                                    )
+                            ), 
+                            
+                            
+                            
+                            
+                            
+                           
 
-                            array('label'=>'Вход', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
-                            array('label'=>'Регистрация', 'url'=>array('/user/registration'), 'visible'=>Yii::app()->user->isGuest),
-                            array('label'=>'Выйти ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
+                            array(
+                                'label'=>'<span class="fa fa-level-up"></span> Вход', 
+                                'url'=>array('/site/login'), 
+                                'encodeLabel'=>false,
+                                'visible'=>Yii::app()->user->isGuest),
+                            array(
+                                'encodeLabel'=>false,'label'=>'<span class="fa fa-child"></span> Регистрация', 'url'=>array('/user/registration'), 'visible'=>Yii::app()->user->isGuest),
+                           
                         ),
                     )); ?>
                 </div>

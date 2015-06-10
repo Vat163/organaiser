@@ -134,7 +134,9 @@ class User extends CActiveRecord
  
     public function beforeSave(){
         parent::beforeSave();
-        $this->password = $this->hashPassword($this->password);
+        if ($this->isNewRecord){
+            $this->password = $this->hashPassword($this->password);
+        } 
         return true;
     }
     

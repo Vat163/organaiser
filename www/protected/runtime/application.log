@@ -7462,3 +7462,55 @@ REQUEST_URI=/site/chat
 in E:\XAMPP\htdocs\organiser\www\protected\views\site\chat.php (19)
 in E:\XAMPP\htdocs\organiser\www\protected\controllers\SiteController.php (256)
 in E:\XAMPP\htdocs\organiser\www\index.php (13)
+2015/06/09 14:02:21 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 E:\XAMPP\htdocs\organiser\framework\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 E:\XAMPP\htdocs\organiser\www\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+HTTP_REFERER=http://organiser.local/
+---
+2015/06/09 14:45:58 [error] [php] Undefined variable: i (E:\XAMPP\htdocs\organiser\www\protected\views\site\view.php:24)
+Stack trace:
+#0 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CController.php(869): SiteController->renderFile()
+#1 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CController.php(782): SiteController->renderPartial()
+#2 E:\XAMPP\htdocs\organiser\www\protected\controllers\SiteController.php(52): SiteController->render()
+#3 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#4 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CController.php(286): SiteController->runAction()
+#6 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#7 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CWebApplication.php(282): SiteController->run()
+#8 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 E:\XAMPP\htdocs\organiser\framework\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 E:\XAMPP\htdocs\organiser\www\index.php(13): CWebApplication->run()
+REQUEST_URI=/
+in E:\XAMPP\htdocs\organiser\www\protected\views\site\view.php (24)
+in E:\XAMPP\htdocs\organiser\www\protected\controllers\SiteController.php (52)
+in E:\XAMPP\htdocs\organiser\www\index.php (13)
+2015/06/09 17:45:04 [error] [php] Undefined index: profile (E:\XAMPP\htdocs\organiser\www\protected\controllers\UserController.php:158)
+Stack trace:
+#0 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CController.php(286): UserController->runAction()
+#1 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CController.php(265): UserController->runActionWithFilters()
+#2 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CWebApplication.php(282): UserController->run()
+#3 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 E:\XAMPP\htdocs\organiser\framework\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#5 E:\XAMPP\htdocs\organiser\www\index.php(13): CWebApplication->run()
+REQUEST_URI=/user/profile
+in E:\XAMPP\htdocs\organiser\www\protected\controllers\UserController.php (158)
+in E:\XAMPP\htdocs\organiser\www\index.php (13)
+2015/06/09 18:00:49 [warning] [application] Failed to set unsafe attribute "user_id" of "Records".
+in E:\XAMPP\htdocs\organiser\www\protected\controllers\SiteController.php (137)
+in E:\XAMPP\htdocs\organiser\www\index.php (13)
+2015/06/09 18:01:56 [warning] [application] Failed to set unsafe attribute "user_id" of "Records".
+in E:\XAMPP\htdocs\organiser\www\protected\controllers\SiteController.php (137)
+in E:\XAMPP\htdocs\organiser\www\index.php (13)
+2015/06/10 12:02:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 E:\XAMPP\htdocs\organiser\framework\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 E:\XAMPP\htdocs\organiser\framework\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 E:\XAMPP\htdocs\organiser\www\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+HTTP_REFERER=http://organiser.local/
+---

@@ -4,13 +4,17 @@
 	   'Редактировать профиль',
     );
     $current_user = User::model()->findByPk(Yii::app()->user->id);
+    if (!isset($form_login)){$form_login=new User();}
+    if (!isset($form_password)){$form_password=new User();}
+    if (!isset($form_email)){$form_email=new User();}
+    if (!isset($form_profile)){$form_profile=new User();}
 ?>
 
 <div class="container">
     <div class="row">
         <?=CHtml::form(); ?>
             <!-- ошибки при валидации !-->
-            <div class="errorList bg-danger"><?=CHtml::errorSummary($form); ?></div>
+            <div class="errorList bg-danger"><?=CHtml::errorSummary($form_login); ?></div>
             <div class="clearfix"></div>
             
             <div class="panel panel-primary">
@@ -28,9 +32,9 @@
                     </div>
 
                     <div class="form-group">
-                            <?=CHtml::activeLabel($form, 'username', array('label' => 'Новый логин:', 'class' => 'col-sm-3 control-label')); ?>
+                            <?=CHtml::activeLabel($form_login, 'username', array('label' => 'Новый логин:', 'class' => 'col-sm-3 control-label')); ?>
                             <div class="col-sm-8">
-                                <?=CHtml::activeTextField($form, 'username', array('class' => 'form-control')) ?>
+                                <?=CHtml::activeTextField($form_login, 'username', array('class' => 'form-control')) ?>
                             </div>
                     </div>
                     <div class="text-center">
@@ -42,6 +46,8 @@
 
 
         <?=CHtml::form(); ?>
+            <div class="errorList bg-danger"><?=CHtml::errorSummary($form_password); ?></div>
+            <div class="clearfix"></div>
             <div class="panel panel-primary">
                 
                 <div class="panel-heading text-center profile_title">
@@ -56,9 +62,9 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <?=CHtml::activeLabel($form, 'password', array('label' => 'Новый пароль:', 'class' => 'col-sm-3 control-label')); ?>
+                            <?=CHtml::activeLabel($form_password, 'password', array('label' => 'Новый пароль:', 'class' => 'col-sm-3 control-label')); ?>
                             <div class="col-sm-8">
-                                <?=CHtml::activePasswordField($form, 'password', array('class' => 'form-control')) ?>
+                                <?=CHtml::activePasswordField($form_password, 'password', array('class' => 'form-control')) ?>
                             </div>
                         </div>
                         <div class="text-center">
@@ -70,6 +76,8 @@
 
 
         <?=CHtml::form(); ?>
+            <div class="errorList bg-danger"><?=CHtml::errorSummary($form_email); ?></div>
+            <div class="clearfix"></div>
             <div class="panel panel-primary">
             
                 <div class="panel-heading text-center profile_title">
@@ -85,9 +93,9 @@
                     </div>
 
                     <div class="form-group">
-                        <?=CHtml::activeLabel($form, 'email', array('label' => 'Новый адрес:', 'class' => 'col-sm-3 control-label')); ?>
+                        <?=CHtml::activeLabel($form_email, 'email', array('label' => 'Новый адрес:', 'class' => 'col-sm-3 control-label')); ?>
                         <div class="col-sm-8">
-                            <?=CHtml::activeEmailField($form, 'email', array('class' => 'form-control')) ?>
+                            <?=CHtml::activeEmailField($form_email, 'email', array('class' => 'form-control')) ?>
                         </div>
                     </div>
                     <div class="text-center">
@@ -99,6 +107,8 @@
 
 
         <?=CHtml::form(); ?>
+            <div class="errorList bg-danger"><?=CHtml::errorSummary($form_profile); ?></div>
+            <div class="clearfix"></div>
             <div class="panel panel-primary">
 
                 <div class="panel-heading text-center profile_title">
@@ -113,9 +123,9 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <?=CHtml::activeLabel($form, 'profile', array('label' => 'Новая должность:', 'class' => 'col-sm-3 control-label')); ?>
+                        <?=CHtml::activeLabel($form_profile, 'profile', array('label' => 'Новая должность:', 'class' => 'col-sm-3 control-label')); ?>
                         <div class="col-sm-8">
-                            <?=CHtml::activeTextField($form, 'profile', array('class' => 'form-control')) ?>
+                            <?=CHtml::activeTextField($form_profile, 'profile', array('class' => 'form-control')) ?>
                         </div>
                     </div>
                     <div class="text-center">
